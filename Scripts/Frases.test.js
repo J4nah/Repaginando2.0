@@ -1,5 +1,5 @@
 //FRASES
-const pool = require("./Database");
+const pool = require("./Database.test");
 const { randomInt } = require('crypto');
 
 const randomNumber = randomInt(15);
