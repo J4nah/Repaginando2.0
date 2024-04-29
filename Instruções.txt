@@ -1,0 +1,7 @@
+no terminal rode:
+npm run dev 
+pra iniciar, depois no navegador acesse: 
+localhost:3000/index
+
+se n der mude seus dados do banco no .env
+tenha certeza que o MySQL80 está "em execução" no gerenciador de tarefas em Serviços

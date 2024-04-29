@@ -1,8 +1,8 @@
-import { getAndPrintRandomPhrase } from './Frases';
-import pool from './Database';
+import { getRandomPhrase } from './Database.test'; // Importe a função correta
 
-async function main() {
-    await getAndPrintRandomPhrase();
+async function getAndPrintRandomPhrase() {
+    const data = await getRandomPhrase();
+    document.getElementById('head').innerText = data.frase_text; // Atualize o texto do h1
 }
 
-main();
+getAndPrintRandomPhrase();

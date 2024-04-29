@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
     <h1 id="head">Texto placeholdeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrr</h1>
-    <button onclick=setText()>Mudar texto</button>
-    <script src="Scripts/Main.js"></script>
+    <script>
+        fetch('http://localhost:3000/index')
+          .then(response => response.json())
+          .then(data => {
+            const h1 = document.getElementById('head');
+            h1.textContent = `${data.frase_text} - ${data.frase_autor}`;
+          });
+      </script>
 </body>
+
 </html>
