@@ -1,7 +1,11 @@
-no terminal rode:
+no terminal :
 npm run dev 
 pra iniciar, depois no navegador acesse: 
 localhost:3000/index
 
 se n der mude seus dados do banco no .env
 tenha certeza que o MySQL80 está "em execução" no gerenciador de tarefas em Serviços
+
+talvez precise rodar no terminal: 
+
+npm i express; npm i dotenv; npm i cors; npm i nodemon; npm i mysql2;

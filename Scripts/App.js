@@ -37,12 +37,16 @@ function getRandomInt(max){
 import express, { json } from 'express';
 import { createPool } from 'mysql2/promise';
 import dotenv from 'dotenv';
+import cors from 'cors';
+
 dotenv.config();
 
 const app = express();
 app.use(json());
 
 app.use(express.static('Public'));
+
+app.use(cors());
 
 const pool = createPool({
   host: process.env.MYSQL_HOST,
@@ -51,10 +55,10 @@ const pool = createPool({
   database: process.env.MYSQL_DATABASE
 });
 
-app.get('/index', async (req, res) => {
+app.get('/frase', async (req, res) => {
   const randomNumber = Math.floor(Math.random() * 10) + 1; // substitua por sua lógica de número aleatório
   const [rows] = await pool.query(`SELECT frase_text, frase_autor FROM frases WHERE frase_id = ?`, [randomNumber]);
-  res.send(`<h1>${rows[0].frase_text}</h1>`);
+  res.send(rows[0]);
 });
 
 app.listen(3000, () => {
