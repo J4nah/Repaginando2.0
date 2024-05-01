@@ -2,22 +2,26 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <title>Document</title>
 </head>
 
 <body>
-    <h1 id="head">Texto placeholdeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrr</h1>
-    <script>
-        fetch('http://localhost:3000/frase')
-          .then(response => response.json())
-          .then(data => {
-            const h1 = document.getElementById('head');
-            h1.textContent = `${data.frase_text} - ${data.frase_autor}`;
-          });
-      </script>
+  <h1 id="head">Texto placeholdeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrr</h1>
+  <script>
+    fetch('http://localhost:3000/frase')
+      .then(response => response.json())
+      .then(data => {
+        const h1 = document.getElementById('head');
+        h1.textContent = `${data.frase_text} _ ${data.frase_autor}`;
+      });
+  </script>
 </body>
 
 </html>
