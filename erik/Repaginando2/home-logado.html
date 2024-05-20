@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaginando</title>
+    <link rel="shortcut icon" href="Imagens/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="home-logado.html"><img src="imagens/Logo.svg" alt="Logo repaginando"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a class="menu-decor" href="home-logado.html">Home</a></li>
+                    <li><a class="menu-decor" href="perfil.html">Perfil</a></li>
+                    <li><a class="menu-decor" href="#">Meus Livros</a></li>
+                </ul>
+            </div>
+            <div class="search-group">
+                <form id="searchForm">
+                    <input class="search-field" type="text" placeholder="Pesquise por autor ou livro...">
+                    <button type="button" class="btn-icon"><a href="#"><img src="imagens/Lupa.svg"
+                                alt="Lupa"></a></button>
+                    <div class="radio">
+                        <div class="authorSearch">
+                            <input type="radio" name="searchType" value="author">
+                            <label for="authorSearch">Pesquisar por autor</label>
+                        </div>
+                        <div class="bookSearch">
+                            <input type="radio" name="searchType" value="book">
+                            <label for="bookSearch">Pesquisar por livro</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="home-flex-main">
+                <div class="home-flex">
+                    <img class="img-home" src="imagens/pessoas/mulher-01.png" alt="">
+                    <p>Olá, Roberta!</p>
+                </div>
+                <a class="btn-line" onclick={Sair()}>Sair</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <img class="banner" src="imagens/banner-site.jpg" alt="banner-site">
+        <div class="container">
+            <h2>Livros em destaque</h2>
+            <div class="books">
+                <div class="container-book">
+                    <a href="livro-logado.html"><img class="size-book" src="imagens/livros/01 - Alice no país das maravilhas.jpg"
+                            alt="Livro Alice no país das maravilhas"></a>
+                    <p class="tag-green">Novo</p>
+                    <div class="text-icon">
+                        <p>Alice no país das<br> maravilhas - Lew...</p>
+                        <img src="imagens/btn-ver-mais.svg" alt="Botão ver mais">
+                    </div>
+                    <img class="stars" src="imagens/avaliacoes/avaliacao-05.png" alt="avaliação 5 estrelas">
+                </div>
+                <div class="container-book">
+                    <a href="livro-logado.html"><img class="size-book" src="imagens/livros/02 - Isso é marketing.jpg"
+                            alt="Livro Isso é marketing"></a>
+                    <p class="tag-green">Novo</p>
+                    <div class="text-icon">
+                        <p>Isso é marketing -<br> Para ser visto é p...</p>
+                        <img src="imagens/btn-ver-mais.svg" alt="Botão ver mais">
+                    </div>
+                    <img class="stars" src="imagens/avaliacoes/avaliacao-03.png" alt="avaliação 3 estrelas">
+                </div>
+                <div class="container-book">
+                    <a href="livro-logado.html"><img class="size-book" src="imagens/livros/03 - Harry Potter e a câmara secreta.jpg"
+                            alt="Livro Harry Potter e a câmara secreta"></a>
+                    <p class="tag-green">Novo</p>
+                    <div class="text-icon">
+                        <p>Harry Potter e a<br> Câmara Secreta...</p>
+                        <img src="imagens/btn-ver-mais.svg" alt="Botão ver mais">
+                    </div>
+                    <img class="stars" src="imagens/avaliacoes/avaliacao-05.png" alt="avaliação 5 estrelas">
+                </div>
+                <div class="container-book">
+                    <a href="livro-logado.html"><img class="size-book" src="imagens/livros/04 - O pequeno príncipe.jpg"
+                            alt="Livro O pequeno príncipe"></a>
+                    <p class="tag-yellow">Semi-Novo</p>
+                    <div class="text-icon">
+                        <p>O Pequeno<br> Príncipe - Antoin...</p>
+                        <img src="imagens/btn-ver-mais.svg" alt="Botão ver mais">
+                    </div>
+                    <img class="stars" src="imagens/avaliacoes/avaliacao-04.png" alt="avaliação 4 estrelas">
+                </div>
+                <div class="container-book">
+                    <a href="livro-logado.html"><img class="size-book" src="imagens/livros/05 - O Senhor dos anéis.jpg"
+                            alt="Livro Alice no país das maravilhas"></a>
+                    <p class="tag-red">Danificado</p>
+                    <div class="text-icon">
+                        <p>O senhor dos<br> anéis - A Socied...</p>
+                        <img src="imagens/btn-ver-mais.svg" alt="Botão ver mais">
+                    </div>
+                    <img class="stars" src="imagens/avaliacoes/avaliacao-02.png" alt="avaliação 2 estrelas">
+                </div>
+            </div>
+            <div class="btn-main">
+                <a class="btn-line" href="livros-destaque-logado.html">Ver todos</a>
+            </div>
+        </div>
+        <div class="container-2">
+            <h2>Mais procurados</h2>
+            <div class="books">
+                <div class="container-book">
+                    <a href="livro-logado.html"><img class="size-book" src="imagens/livros/06 - Estuda que a vida muda.jpg"
+                            alt="Livro Estuda que a vida muda"></a>
+                    <p class="tag-green">Novo</p>
+                    <div class="text-icon">
+                        <p>Estuda que a vida<br> muda - Ajudand...</p>
+                        <img src="imagens/btn-ver-mais.svg" alt="Botão ver mais">
+                    </div>
+                    <img class="stars" src="imagens/avaliacoes/avaliacao-05.png" alt="avaliação 5 estrelas">
+                </div>
+                <div class="container-book">
+                    <a href="livro-logado.html"><img class="size-book" src="imagens/livros/07 - Depois do funeral.jpg"
+                            alt="Livro Depois do funeral"></a>
+                    <p class="tag-yellow">Semi-Novo</p>
+                    <div class="text-icon">
+                        <p>Depois do Funeral -<br> Agayha Christie...</p>
+                        <img src="imagens/btn-ver-mais.svg" alt="Botão ver mais">
+                    </div>
+                    <img class="stars" src="imagens/avaliacoes/avaliacao-05.png" alt="avaliação 5 estrelas">
+                </div>
+                <div class="container-book">
+                    <a href="livro-logado.html"><img class="size-book" src="imagens/livros/08 - A bíblia do marketing digital.jpg"
+                            alt="Livro A bíblia do marketing digital"></a>
+                    <p class="tag-red">Danificado</p>
+                    <div class="text-icon">
+                        <p>A Bíblia do<br> Marketing Digital -...</p>
+                        <img src="imagens/btn-ver-mais.svg" alt="Botão ver mais">
+                    </div>
+                    <img class="stars" src="imagens/avaliacoes/avaliacao-05.png" alt="avaliação 5 estrelas">
+                </div>
+                <div class="container-book">
+                    <a href="livro-logado.html"><img class="size-book" src="imagens/livros/09 - George Orwell 1984.jpg"
+                            alt="Livro George Orwell 1984"></a>
+                    <p class="tag-yellow">Semi-Novo</p>
+                    <div class="text-icon">
+                        <p>George Orwell<br> Clássico da literat...</p>
+                        <img src="imagens/btn-ver-mais.svg" alt="Botão ver mais">
+                    </div>
+                    <img class="stars" src="imagens/avaliacoes/avaliacao-05.png" alt="avaliação 5 estrelas">
+                </div>
+                <div class="container-book">
+                    <a href="livro-logado.html"><img class="size-book" src="imagens/livros/10 - Na cozinah com Nigella.jpg"
+                            alt="Livro Na cozinah com Nigella"></a>
+                    <p class="tag-green">Novo</p>
+                    <div class="text-icon">
+                        <p>Na cozinha com<br> Niguella Lawson...</p>
+                        <img src="imagens/btn-ver-mais.svg" alt="Botão ver mais">
+                    </div>
+                    <img class="stars" src="imagens/avaliacoes/avaliacao-05.png" alt="avaliação 5 estrelas">
+                </div>
+            </div>
+            <div class="btn-main">
+                <a class="btn-line" href="livros-procurados-logado.html">Ver todos</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-flex">
+            <div class="container-footer">
+                <h3>Sobre Nós</h3>
+                <ul>
+                    <li><a href="#">Quem somos</a></li>
+                    <li><a href="#">Trabalhe conosco</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Imprensa</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Políticas e Termos</h3>
+                <ul>
+                    <li><a href="#">Política e Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Suporte</h3>
+                <ul>
+                    <li><a href="#">Central de ajuda</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Fórum da comunidade</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Sobre Nós</h3>
+                <ul>
+                    <li><a href="#">Siga nos:</a></li>
+                </ul>
+                <div class="social-media">
+                    <ul>
+                        <li><a href="https://www.facebook.com/" target="_blank"><img src="imagens/redes/Facebook.svg"
+                                    alt="Facebook"></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><img src="imagens/redes/Instagram.svg"
+                                    alt="Instagram"></a></li>
+                        <li><a href="https://www.linkedin.com/" target="_blank"><img src="imagens/redes/Linkedin.svg"
+                                    alt="Linkedin"></a></li>
+                        <li><a href="https://www.tiktok.com/" target="_blank"><img src="imagens/redes/Tiktok.svg"
+                                    alt="Tiktok"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="divider-line"></div>
+        <p class="copyright">Copyright © 2024 Repaginando. Todos os direitos reservados.</p>
+    </footer>
+    <script src="../../Scripts/App.js"></script>
+    <script src="../../Scripts/utils.js"></script>
+    <script src="../../Scripts/Sair.js"></script>
+</body>
+
+</html>

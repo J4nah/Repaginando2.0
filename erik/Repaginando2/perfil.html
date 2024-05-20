@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaginando</title>
+    <link rel="shortcut icon" href="Imagens/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="home-logado.html"><img src="imagens/Logo.svg" alt="Logo repaginando"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a class="menu-decor" href="home-logado.html">Home</a></li>
+                    <li><a class="menu-decor" href="perfil.html">Perfil</a></li>
+                    <li><a class="menu-decor" href="#">Meus Livros</a></li>
+                </ul>
+            </div>
+            <div class="search-group">
+                <form id="searchForm">
+                    <input class="search-field" type="text" placeholder="Pesquise por autor ou livro...">
+                    <button type="button" class="btn-icon"><a href="#"><img src="imagens/Lupa.svg"
+                                alt="Lupa"></a></button>
+                    <div class="radio">
+                        <div class="authorSearch">
+                            <input type="radio" name="searchType" value="author">
+                            <label for="authorSearch">Pesquisar por autor</label>
+                        </div>
+                        <div class="bookSearch">
+                            <input type="radio" name="searchType" value="book">
+                            <label for="bookSearch">Pesquisar por livro</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="home-flex-main">
+                <div class="home-flex">
+                    <img class="img-home" src="imagens/pessoas/mulher-01.png" alt="">
+                    <p>Olá, Roberta!</p>
+                </div>
+                <a class="btn-line" href="index.html">Sair</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="perfil-publico">
+            <div class="profile">
+                <img class="photo" src="imagens/pessoas/mulher-01.png" alt="Foto do usuário">
+                <div class="data-user">
+                    <h2 class="name">Roberta Ferreira</h2>
+                    <p>Editar nome</p>
+                    <div class="container-about">
+                        <h2 class="h2-profile">Sobre mim</h2>
+                        <p class="text-bio">Para mim a leitura vai além de um simples passatempo, é uma jornada de
+                            crescimento pessoal e uma fonte constante de inspiração.</p>
+                    </div>
+
+                </div>
+            </div>
+            <h2 class="h2-profile02">Selecione pelo menos 5 gêneros do seu interesse</h2>
+            <div class="select-gender">
+                <form action="">
+                    <div>
+                        <input type="checkbox" id="ficcao_cientifica" name="genero" value="ficcao_cientifica">
+                        <label for="ficcao_cientifica">Ficção Científica</label><br>
+                        <input type="checkbox" id="fantasia" name="genero" value="fantasia">
+                        <label for="fantasia">Fantasia</label><br>
+                        <input type="checkbox" id="romance" name="genero" value="romance">
+                        <label for="romance">Romance</label><br>
+                        <input type="checkbox" id="mistério" name="genero" value="mistério">
+                        <label for="mistério">Mistério</label><br>
+                        <input type="checkbox" id="suspense" name="genero" value="suspense">
+                        <label for="suspense">Suspense</label><br>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="terror_horror" name="genero" value="terror_horror">
+                        <label for="terror_horror">Terror/Horror</label><br>
+                        <input type="checkbox" id="policial" name="genero" value="policial">
+                        <label for="policial">Policial</label><br>
+                        <input type="checkbox" id="aventura" name="genero" value="aventura">
+                        <label for="aventura">Aventura</label><br>
+                        <input type="checkbox" id="historia" name="genero" value="historia">
+                        <label for="historia">História</label><br>
+                        <input type="checkbox" id="biografia" name="genero" value="biografia">
+                        <label for="biografia">Biografia</label><br>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="autobiografia" name="genero" value="autobiografia">
+                        <label for="autobiografia">Autobiografia</label><br>
+                        <input type="checkbox" id="fatos_reais" name="genero" value="fatos_reais">
+                        <label for="fatos_reais">Fatos Reais</label><br>
+                        <input type="checkbox" id="poesia" name="genero" value="poesia">
+                        <label for="poesia">Poesia</label><br>
+                        <input type="checkbox" id="drama" name="genero" value="drama">
+                        <label for="drama">Drama</label><br>
+                        <input type="checkbox" id="comedia" name="genero" value="comedia">
+                        <label for="comedia">Comédia</label><br>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="cronica" name="genero" value="cronica">
+                        <label for="cronica">Crônica</label><br>
+                        <input type="checkbox" id="ficcao_historica" name="genero" value="ficcao_historica">
+                        <label for="ficcao_historica">Ficção Histórica</label><br>
+                        <input type="checkbox" id="ficcao_realista" name="genero" value="ficcao_realista">
+                        <label for="ficcao_realista">Ficção Realista</label><br>
+                        <input type="checkbox" id="ficcao_distopica" name="genero" value="ficcao_distopica">
+                        <label for="ficcao_distopica">Ficção Distópica</label><br>
+                        <input type="checkbox" id="literatura_infantil" name="genero" value="literatura_infantil">
+                        <label for="literatura_infantil">Literatura Infantil</label><br>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="ensaios" name="genero" value="ensaios">
+                        <label for="ensaios">Ensaios</label><br>
+                    
+                        <input type="checkbox" id="filosofia" name="genero" value="filosofia">
+                        <label for="filosofia">Filosofia</label><br>
+                    
+                        <input type="checkbox" id="autoajuda" name="genero" value="autoajuda">
+                        <label for="autoajuda">Autoajuda</label><br>
+                    
+                        <input type="checkbox" id="viagem" name="genero" value="viagem">
+                        <label for="viagem">Viagem</label><br>
+                    
+                        <input type="checkbox" id="religiao" name="genero" value="religiao">
+                        <label for="religiao">Religião</label><br>
+                    </div>
+                </form>
+            </div>
+            <h2 class="h2-profile03">Selecione a sua localização</h2>
+            <form action="#">
+                <select class="box-state style-box-profile" id="estado" name="estado" onchange="mostrarCidades()">
+                    <option value="">Estado</option>
+                </select>
+                <select class="style-box-profile" id="cidades" name="cidade">
+                    <option value="">Cidade</option>
+                </select>
+            </form>
+            <h2 class="h2-profile03">Dados públicos (Contato para troca de livros)</h2>
+            <div>
+                <form class="flex-form" action="#">
+                    <div>
+                        <label class="text-profile" for="telefone">Telefone</label><br>
+                        <input class="style-box-profile-contact" type="tel" id="telefone" name="telefone" placeholder="+55 (21) 91245-6789"><br>
+                    </div>
+                    <div>
+                        <label class="text-profile" for="email">E-mail</label> <br>
+                        <input class="style-box-profile-contact" type="email" id="email" name="email" placeholder="contato@seuemail.com.br">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-flex">
+            <div class="container-footer">
+                <h3>Sobre Nós</h3>
+                <ul>
+                    <li><a href="#">Quem somos</a></li>
+                    <li><a href="#">Trabalhe conosco</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Imprensa</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Políticas e Termos</h3>
+                <ul>
+                    <li><a href="#">Política e Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Suporte</h3>
+                <ul>
+                    <li><a href="#">Central de ajuda</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Fórum da comunidade</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Sobre Nós</h3>
+                <ul>
+                    <li><a href="#">Siga nos:</a></li>
+                </ul>
+                <div class="social-media">
+                    <ul>
+                        <li><a href="https://www.facebook.com/" target="_blank"><img src="imagens/redes/Facebook.svg"
+                                    alt="Facebook"></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><img src="imagens/redes/Instagram.svg"
+                                    alt="Instagram"></a></li>
+                        <li><a href="https://www.linkedin.com/" target="_blank"><img src="imagens/redes/Linkedin.svg"
+                                    alt="Linkedin"></a></li>
+                        <li><a href="https://www.tiktok.com/" target="_blank"><img src="imagens/redes/Tiktok.svg"
+                                    alt="Tiktok"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="divider-line"></div>
+        <p class="copyright">Copyright © 2024 Repaginando. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    height: 120px;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px #0000002c;
+    z-index: 1;
+}
+
+nav {
+    font-display: flex;
+    justify-content: space-between;
+    max-width: 1310px;
+}
+
+.logo {
+    width: 73.45px;
+    margin-right: 30px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    font-size: 18px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--firstColor);
+    position: relative;
+}
+
+.menu-decor:after {
+    content: "";
+    position: absolute;
+    background-color: var(--thirdColor);
+    height: 3px;
+    width: 0%;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+.menu-decor:hover:after {
+    width: 100%;
+}
+
+.menu a:hover {
+    text-decoration: none;
+    color: var(--firstColor);
+}
+
+.search-group {
+    display: flex;
+    margin: 0px 70px;
+    align-items: center;
+}
+
+.search-field {
+    border: 2px solid var(--firstColor);
+    color: var(--firstColor);
+    border-radius: 50px;
+    width: 449px;
+    height: 40px;
+    padding: 4px 20px;
+    font-size: 17px;
+}
+
+.search-field:hover {
+    border: 2px solid var(--secondColor);
+}
+
+.btn-icon {
+    background-color: var(--white);
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--firstColor);
+    border-radius: 50px;
+    margin-left: 15px;
+}
+
+.btn-icon img{
+    width: 20px;
+}
+
+.btn-icon:hover {
+    background-color: var(--firstColor);
+    border: 2px solid var(--firstColor); 
+}
+
+.btn-icon:hover a img {
+    filter: brightness(0) invert(1);
+}
+
+#searchForm {
+    margin-top: 25px;
+}
+
+.radio {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+    gap: 20px;
+    
+}
+
+.btn-line a {
+    text-decoration: none;
+    color: var(--firstColor);
+}
+
+.btn-line {
+    text-decoration: none;
+    color: var(--firstColor);
+    border: 2px solid var(--firstColor);
+    border-radius: 50px;
+    background-color: var(--white);
+    padding: 5px 20px;
+    font-size: 18px;
+}
+
+.btn-line:hover {
+    color: var(--white);
+    background-color: var(--firstColor);
+}
+
+.btn-solid {
+    text-decoration: none;
+    color: var(--white);
+    border: 2px solid var(--secondColor);
+    background-color: var(--secondColor);
+    border-radius: 50px;
+    padding: 5px 20px;
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+.btn-solid:hover {
+    color: var(--secondColor);
+    border: 2px solid var(--secondColor);
+    background-color: var(--white);
+}
+

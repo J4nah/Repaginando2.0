@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaginando</title>
+    <link rel="shortcut icon" href="Imagens/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="imagens/Logo.svg" alt="Logo repaginando"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a class="menu-decor" href="index.html">Home</a></li>
+                    <li><a class="menu-decor" href="tela-login.html">Perfil</a></li>
+                    <li><a class="menu-decor" href="tela-login.html">Meus Livros</a></li>
+                </ul>
+            </div>
+            <div class="search-group">
+                <form id="searchForm">
+                    <input class="search-field" type="text" placeholder="Pesquise por autor ou livro...">
+                    <button type="button" class="btn-icon"><a href="#"><img src="imagens/Lupa.svg"
+                                alt="Lupa"></a></button>
+                    <div class="radio">
+                        <div class="authorSearch">
+                            <input type="radio" name="searchType" value="author">
+                            <label for="authorSearch">Pesquisar por autor</label>
+                        </div>
+                        <div class="bookSearch">
+                            <input type="radio" name="searchType" value="book">
+                            <label for="bookSearch">Pesquisar por livro</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <a class="btn-line" href="tela-login.html">Entrar</a>
+                <a class="btn-solid" href="cadastre-se.html">Inscreva-se</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="login">
+            <div class="box-login">
+                <h2 class="h2-center h2-register">Criar conta</h2>
+                <form action="/submit" method="post">
+                    <div class="group-acess01">
+                      <label class="font-24" for="nomeCompleto">Nome completo</label> <br>
+                      <input class="field-login" type="text" id="nomeCompleto" name="nomeCompleto" required>
+                    </div>
+                    <div class="group-acess01">
+                        <label class="font-24" for="email">E-mail</label> <br>
+                        <input class="field-login" type="text" id="email" name="email" required>
+                      </div>
+                      <div class="group-acess01">
+                        <label class="font-24" for="senha">Senha</label> <br>
+                        <input class="field-login" type="text" id="senha" name="senha" required>
+                      </div>
+                    <div class="group-acess01">
+                      <label class="font-24" for="confirmarSenha">Confirmar a senha</label> <br>
+                      <input class="field-login " type="password" id="confirmarSenha" name="confirmarSenha" required>
+                    </div>
+                    <div class="flex-register">
+                        <div class="group-terms">
+                          <input type="checkbox" id="termosUso" name="termosUso">
+                          <label for="termosUso">Aceito os termos de uso</label>
+                        </div>                        
+                    </div>
+                    <div class="btn-size-register">
+                        <a class="btn-line btn-login btn-register "  onclick={CadastrarUsuario()}>Cadastrar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <p class="last-text">Ao continuar, você concorda com os com os <a href="termos-uso.html"><strong>Termos de Uso</strong></a> e <a href="politicas-privacidade.html"><strong>Política de Privacidade</strong></a> <br>
+            da Repaginando e seus parceiros, e em receber nossas comunicações.</p>
+    </main>
+    <footer>
+        <div class="footer-flex">
+            <div class="container-footer">
+                <h3>Sobre Nós</h3>
+                <ul>
+                    <li><a href="#">Quem somos</a></li>
+                    <li><a href="#">Trabalhe conosco</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Imprensa</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Políticas e Termos</h3>
+                <ul>
+                    <li><a href="#">Política e Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Suporte</h3>
+                <ul>
+                    <li><a href="#">Central de ajuda</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Fórum da comunidade</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Sobre Nós</h3>
+                <ul>
+                    <li><a href="#">Siga nos:</a></li>
+                </ul>
+                <div class="social-media">
+                    <ul>
+                        <li><a href="https://www.facebook.com/" target="_blank"><img src="imagens/redes/Facebook.svg"
+                                    alt="Facebook"></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><img src="imagens/redes/Instagram.svg"
+                                    alt="Instagram"></a></li>
+                        <li><a href="https://www.linkedin.com/" target="_blank"><img src="imagens/redes/Linkedin.svg"
+                                    alt="Linkedin"></a></li>
+                        <li><a href="https://www.tiktok.com/" target="_blank"><img src="imagens/redes/Tiktok.svg"
+                                    alt="Tiktok"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="divider-line"></div>
+        <p class="copyright">Copyright © 2024 Repaginando. Todos os direitos reservados.</p>
+    </footer>
+    <script src="../../Scripts/Cadastrar.js"></script>
+    <script src="../../Scripts/utils.js"></script>
+    <script src="../../Scripts/confirmaSenha.js"></script>
+   <!--  <script src="../../Scripts/App.js"></script> -->
+</body>
+
+</html>

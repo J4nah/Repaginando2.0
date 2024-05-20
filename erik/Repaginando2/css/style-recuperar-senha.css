@@ -1,0 +1,56 @@
+.recover {
+    margin-top: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.box-recover {
+    border: 3px solid var(--firstColor);
+    border-radius: 10px;
+    width: 450px;
+    height: 460px;
+}
+
+.h2-center {
+    text-align: center;
+    margin: 60px 0px;
+}
+
+.field-email {
+    margin-top: 10px;
+    border: 2px solid var(--firstColor);
+    color: var(--firstColor);
+    border-radius: 50px;
+    width: 350px;
+    height: 40px;
+    padding: 4px 20px;
+    font-size: 20px;
+    justify-self: center;
+}
+
+.field-email:hover {
+    border: 2px solid var(--secondColor);
+}
+
+.text-email {
+    margin-top: 20px;
+    color: var(--firstColor);
+    text-align: center;
+    font-size: 18px;
+}
+
+
+.btn-size-recover {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    width: 450px;
+}
+
+.email-flex {
+    display: flex;
+    justify-content: center;
+}
+
+

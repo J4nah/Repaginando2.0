@@ -34,15 +34,21 @@ function getRandomInt(max){
 }
  */
 
-import express, { json } from 'express';
-import { createPool } from 'mysql2/promise';
-import dotenv from 'dotenv';
-import cors from 'cors';
+// import express, { json } from 'express';
+// import { createPool } from 'mysql2/promise';
+// import dotenv from 'dotenv';
+// import cors from 'cors';
+
+const express = require('express');
+const { createPool } = require('mysql2/promise');
+const dotenv = require('dotenv');
+const cors = require('cors');
+
 
 dotenv.config();
 
 const app = express();
-app.use(json());
+app.use(express.json());
 
 app.use(express.static('Public'));
 
@@ -55,11 +61,42 @@ const pool = createPool({
   database: process.env.MYSQL_DATABASE
 });
 
+// frases aleatorias
 app.get('/frase', async (req, res) => {
   const randomNumber = Math.floor(Math.random() * 10) + 1; // substitua por sua lógica de número aleatório
   const [rows] = await pool.query(`SELECT frase_text, frase_autor FROM frases WHERE frase_id = ?`, [randomNumber]);
   res.send(rows[0]);
 });
+
+// cadastro de usuario basic
+app.post('/usuario/cadastro', async (req, res) => {
+  const { nomeCompleto, email, senha } = req.body; // substitua pelos campos do seu usuário
+  try {
+    const [rows] = await pool.query(`INSERT INTO usuario (Nome_usuario, Email, Senha) VALUES (?, ?, ?)`,
+      [nomeCompleto, email, senha]);
+
+    res.status(201).send({ message: 'Usuário criado com sucesso!' });
+
+  } catch (error) {
+    res.status(500).send({ message: 'Erro ao criar usuário.' });
+  }
+})
+
+// login
+app.post('/login', async (req, res) => {
+  const { email, senha } = req.body;
+  try {
+    const [rows] = await pool.query(`SELECT * FROM usuario WHERE Email = ? AND Senha = ?`, [email, senha]);
+    if (rows.length > 0) {
+      res.json(rows[0]);
+    } else {
+      res.status(404).send({ message: 'Usuário não encontrado' });
+    }
+  } catch (error) {
+    res.status(500).send({ message: 'Erro ao buscar usuário' });
+  }
+});
+
 
 app.listen(3000, () => {
   console.log('Servidor rodando na porta 3000');

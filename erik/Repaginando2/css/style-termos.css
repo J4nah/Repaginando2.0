@@ -1,0 +1,22 @@
+.terms {
+    margin-top: 200px;
+    width: 90%;
+}
+
+.h1-terms {
+    color: var(--firtColor);
+    margin-left: 50px;
+    font-size: 26px;
+}
+
+.p-terms {
+    color: var(--firtColor);
+    margin-left: 50px;
+    text-align: justify;
+    margin-top: 10px;
+}
+
+.p-first {
+    margin: 20px;
+    margin-left: 50px;
+}

@@ -1,0 +1,19 @@
+.text-sent {
+    text-align: center;
+    font-size: 18px;
+}
+
+.elements-sent {
+    display: flex;
+    height: 460px;
+    justify-content: center;
+    align-items: center;
+}
+
+.elements-sent img {
+    margin-left: 50px;
+}
+
+.elements-sent p {
+    margin-top:20px;
+}

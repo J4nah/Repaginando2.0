@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaginando</title>
+    <link rel="shortcut icon" href="Imagens/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="home-logado.html"><img src="imagens/Logo.svg" alt="Logo repaginando"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a class="menu-decor" href="home-logado.html">Home</a></li>
+                    <li><a class="menu-decor" href="perfil.html">Perfil</a></li>
+                    <li><a class="menu-decor" href="#">Meus Livros</a></li>
+                </ul>
+            </div>
+            <div class="search-group">
+                <form id="searchForm">
+                    <input class="search-field" type="text" placeholder="Pesquise por autor ou livro...">
+                    <button type="button" class="btn-icon"><a href="#"><img src="imagens/Lupa.svg"
+                                alt="Lupa"></a></button>
+                    <div class="radio">
+                        <div class="authorSearch">
+                            <input type="radio" name="searchType" value="author">
+                            <label for="authorSearch">Pesquisar por autor</label>
+                        </div>
+                        <div class="bookSearch">
+                            <input type="radio" name="searchType" value="book">
+                            <label for="bookSearch">Pesquisar por livro</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="home-flex-main">
+                <div class="home-flex">
+                    <img class="img-home" src="imagens/pessoas/mulher-01.png" alt="">
+                    <p>Olá, Roberta!</p>
+                </div>
+                <a class="btn-line" href="index.html">Sair</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="perfil-publico">
+            <div class="profile">
+                <img class="photo" src="imagens/pessoas/mulher-01.png" alt="Foto do usuário">
+                <div class="data-user">
+                    <h2 class="name">Roberta Ferreira</h2>
+                    <p>Rio de Janeiro - SP</p>
+                    <img class="star-user" src="imagens/avaliacoes/avaliacao-05.png" alt="Avaliação 5 estrelas">
+                    <p class="stars-subtitle">(com base em 3 classificações)</p>
+                </div>
+            </div>
+            <h2 class="about-me-h2">Sobre mim</h2>
+            <p class="text-bio">Para mim a leitura vai além de um simples passatempo, é uma jornada de crescimento pessoal e uma fonte constante de inspiração.</p>
+            <h2 class="about-me-h2">Livros Disponíveis</h2>
+            <div class="books margin-perfil-publico">
+                <div class="container-book">
+                    <a href="livro-logado.html"><img class="size-book" src="imagens/livros/01 - Alice no país das maravilhas.jpg"
+                            alt="Livro Alice no país das maravilhas"></a>
+                    <p class="tag-green">Novo</p>
+                    <div class="text-icon">
+                        <p>Alice no país das<br> maravilhas - Lew...</p>
+                        <img src="imagens/btn-ver-mais.svg" alt="Botão ver mais">
+                    </div>
+                    <img class="stars" src="imagens/avaliacoes/avaliacao-05.png" alt="avaliação 5 estrelas">
+                </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-flex">
+            <div class="container-footer">
+                <h3>Sobre Nós</h3>
+                <ul>
+                    <li><a href="#">Quem somos</a></li>
+                    <li><a href="#">Trabalhe conosco</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Imprensa</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Políticas e Termos</h3>
+                <ul>
+                    <li><a href="#">Política e Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Suporte</h3>
+                <ul>
+                    <li><a href="#">Central de ajuda</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Fórum da comunidade</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Sobre Nós</h3>
+                <ul>
+                    <li><a href="#">Siga nos:</a></li>
+                </ul>
+                <div class="social-media">
+                    <ul>
+                        <li><a href="https://www.facebook.com/" target="_blank"><img src="imagens/redes/Facebook.svg"
+                                    alt="Facebook"></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><img src="imagens/redes/Instagram.svg"
+                                    alt="Instagram"></a></li>
+                        <li><a href="https://www.linkedin.com/" target="_blank"><img src="imagens/redes/Linkedin.svg"
+                                    alt="Linkedin"></a></li>
+                        <li><a href="https://www.tiktok.com/" target="_blank"><img src="imagens/redes/Tiktok.svg"
+                                    alt="Tiktok"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="divider-line"></div>
+        <p class="copyright">Copyright © 2024 Repaginando. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>

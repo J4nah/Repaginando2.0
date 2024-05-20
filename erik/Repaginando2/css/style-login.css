@@ -1,0 +1,106 @@
+.login {
+    margin-top: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.box-login {
+    border: 3px solid var(--firstColor);
+    border-radius: 10px;
+    width: 450px;
+    height: 620px;
+}
+
+.h2-center {
+    text-align: center;
+    margin: 60px 0px;
+}
+
+.font-24 {
+    font-size: 24px;
+}
+
+.field-login {
+    border: 2px solid var(--firstColor);
+    color: var(--firstColor);
+    border-radius: 50px;
+    width: 350px;
+    height: 40px;
+    padding: 4px 20px;
+    font-size: 20px;
+    margin-top: 1px;
+}
+
+.field-login:hover {
+    border: 2px solid var(--secondColor);
+}
+
+.group-acess01 {
+    margin: 20px 50px 10px 50px;
+}
+
+.group-acess02 {
+    margin: 20px 50px 5px 50px;
+}
+
+.group-acess03 {
+    margin-top: 10px;
+}
+
+.label-login {
+    color: var(--firstColor);
+}
+
+.flex-login {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+.btn-size {
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+}
+
+.forget {
+    color: var(--firstColor);
+}
+
+.forget:hover {
+    color: var(--secondColor);
+}
+
+.create {
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.create p {
+    color: var(--firstColor);
+}
+
+.create a {
+    color: var(--firstColor);
+}
+
+.create a:hover {
+    color: var(--secondColor);
+}
+
+.last-text, .last-text a {
+    color: var(--firstColor);
+    margin-top: 10px;
+    text-align: center;
+}
+
+.last-text a:hover {
+    color: var(--secondColor);
+    margin-top: 10px;
+    text-align: center;
+}
+

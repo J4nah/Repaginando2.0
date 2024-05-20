@@ -1,0 +1,77 @@
+body{
+    overflow-x: hidden;
+}
+
+.container-about p {
+    border: 2px solid var(--firstColor);
+    width: 532px;
+    border-radius: 15px;
+    padding: 2px 10px;
+    color: var(--gray);
+}
+
+.container-about p:hover {
+    border: 2px solid var(--secondColor);
+}
+
+
+.h2-profile {
+    margin: 5px 0px;
+    font-family: 24px;
+    font-weight: 600;
+}
+
+.h2-profile02 {
+    margin: 60px 0px 30px 0px;
+    font-family: 24px;
+    font-weight: 600;
+}
+
+.h2-profile03 {
+    margin: 40px 0px 30px 0px;
+    font-family: 24px;
+    font-weight: 600;
+}
+
+.select-gender form {
+    border: 2px solid var(--firstColor);
+    border-radius: 15px;
+    width: 850px;
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+}
+
+.box-state {
+    margin-right: 30px;
+}
+
+.style-box-profile {
+    border: 2px solid var(--firstColor);
+    color: var(--firstColor);
+    border-radius: 50px;
+    width: 128px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.style-box-profile-contact {
+    border: 2px solid var(--firstColor);
+    color: var(--firstColor);
+    border-radius: 50px;
+    width: 350px;
+    height: 40px;
+    padding-left: 15px;
+    font-size: 18px;
+}
+
+.text-profile {
+    font-size: 20px;
+}
+
+.flex-form {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+}

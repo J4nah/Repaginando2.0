@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaginando</title>
+    <link rel="shortcut icon" href="Imagens/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="imagens/Logo.svg" alt="Logo repaginando"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a class="menu-decor" href="index.html">Home</a></li>
+                    <li><a class="menu-decor" href="tela-login.html">Perfil</a></li>
+                    <li><a class="menu-decor" href="tela-login.html">Meus Livros</a></li>
+                </ul>
+            </div>
+            <div class="search-group">
+                <form id="searchForm">
+                    <input class="search-field" type="text" placeholder="Pesquise por autor ou livro...">
+                    <button type="button" class="btn-icon"><a href="#"><img src="imagens/Lupa.svg"
+                                alt="Lupa"></a></button>
+                    <div class="radio">
+                        <div class="authorSearch">
+                            <input type="radio" name="searchType" value="author">
+                            <label for="authorSearch">Pesquisar por autor</label>
+                        </div>
+                        <div class="bookSearch">
+                            <input type="radio" name="searchType" value="book">
+                            <label for="bookSearch">Pesquisar por livro</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <a class="btn-line" href="tela-login.html">Entrar</a>
+                <a class="btn-solid" href="cadastre-se.html">Inscreva-se</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="book-detail">
+            <div class="book-inside">
+                <p class="big-tag-green">Novo</p>
+                <button type="button" class="btn-icon-like"><img src="imagens/coracao.svg" alt="Lupa"></button>
+                <img class="biggerbook" src="imagens/livros/01 - Alice no país das maravilhas.jpg" alt="">
+            </div>
+            <div>
+                <div class="profile">
+                    <img class="photo" src="imagens/pessoas/mulher-01.png" alt="Foto do usuário">
+                    <div class="data-user">
+                        <h2 class="name">Roberta Ferreira</h2>
+                        <p>Rio de Janeiro - SP</p>
+                        <img class="star-user" src="imagens/avaliacoes/avaliacao-05.png" alt="Avaliação 5 estrelas">
+                        <p class="stars-subtitle">(com base em 3 classificações)</p>
+                        <a href="perfil-publico.html">Ver Perfil</a>
+                    </div>
+                </div>
+                <div class="book-description">
+                    <h1>Descrição do livro</h1>
+                    <p>
+                        Nome do livro: <span class="about-book">Alice no país das maravilhas</span> <br>
+                        Autor: <span class="about-book">Lewis Carroll</span> <br>
+                        Editora: <span class="about-book">Autêntica</span> <br>
+                        Gênero: <span class="about-book">Clássico Infantil</span> <br>
+                        Ano de publicação: <span class="about-book">2017</span> <br>
+                        Quantidade de páginas: <span class="about-book">128</span> <br>
+                    </p>
+                </div>
+                <p class="contact-phrase">Entrar em contato</p>
+                <div class="contact-icon">
+                    <a href="#"><img src="imagens/redes/btn-whatsapp.png" alt="Ícone Whatsapp"></a>
+                    <a href="#"><img src="imagens/redes/btn-email.png" alt="Ícone Whatsapp"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-flex">
+            <div class="container-footer">
+                <h3>Sobre Nós</h3>
+                <ul>
+                    <li><a href="#">Quem somos</a></li>
+                    <li><a href="#">Trabalhe conosco</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Imprensa</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Políticas e Termos</h3>
+                <ul>
+                    <li><a href="#">Política e Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Suporte</h3>
+                <ul>
+                    <li><a href="#">Central de ajuda</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Fórum da comunidade</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Sobre Nós</h3>
+                <ul>
+                    <li><a href="#">Siga nos:</a></li>
+                </ul>
+                <div class="social-media">
+                    <ul>
+                        <li><a href="https://www.facebook.com/" target="_blank"><img src="imagens/redes/Facebook.svg"
+                                    alt="Facebook"></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><img src="imagens/redes/Instagram.svg"
+                                    alt="Instagram"></a></li>
+                        <li><a href="https://www.linkedin.com/" target="_blank"><img src="imagens/redes/Linkedin.svg"
+                                    alt="Linkedin"></a></li>
+                        <li><a href="https://www.tiktok.com/" target="_blank"><img src="imagens/redes/Tiktok.svg"
+                                    alt="Tiktok"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="divider-line"></div>
+        <p class="copyright">Copyright © 2024 Repaginando. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>

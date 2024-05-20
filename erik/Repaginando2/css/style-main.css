@@ -1,0 +1,102 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner {
+    width: 100%;
+    margin-top: 120px;
+}
+
+.container {
+    max-width: 1310px;
+    margin: 60px 130px 80px 130px;
+}
+
+.container-2 {
+    max-width: 1310px;
+    margin: 0px 130px 0px 130px;
+}
+
+h2 {
+    margin-bottom: 48px;
+    color: var(--firstColor);
+}
+
+p {
+    color: var(--firstColor);
+    font-size: 16px;
+}
+.container-book p {
+    margin: 5px 0px;
+}
+
+.text-icon {
+    display: flex;
+    align-items:flex-end;
+    gap: 5px;
+}
+
+.books{
+    display: flex;
+    justify-content: space-between;
+}
+
+.size-book {
+    width: 166px;
+}
+
+.stars {
+    width: 100px;
+}
+
+.btn-main{
+    width: 1310px;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-book {
+    
+    position:relative;
+}
+
+.tag-green {
+    background-color: var(--compColor01);
+    color: var(--firstColor);
+    font-weight: 500;
+    padding: 5px 10px;
+    position: absolute;
+    top: 8px;
+    right: 13px;
+    border-radius: 4px;
+}
+
+.tag-yellow {
+    background-color: var(--thirdColor);
+    color: var(--firstColor);
+    font-weight: 500;
+    padding: 5px 10px;
+    position: absolute;
+    top: 8px;
+    right: 13px;
+    border-radius: 4px;
+}
+
+.tag-red {
+    background-color: var(--compColor02);
+    color: var(--firstColor);
+    font-weight: 500;
+    padding: 5px 10px;
+    position: absolute;
+    top: 8px;
+    right: 13px;
+    border-radius: 4px;
+}
+
+label {
+    color: var(--firstColor);
+}

@@ -1,0 +1,22 @@
+.h2-register {
+    margin: 30px 0px 0px 0px;
+}
+
+.btn-size-register {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-register {
+    margin-top: 30px;
+}
+
+.flex-register {
+    display: flex;
+    justify-content: center;
+    justify-content: flex-end
+}
+
+.group-terms {
+    margin-right: 47px;
+}

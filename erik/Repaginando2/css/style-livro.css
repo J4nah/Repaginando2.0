@@ -1,0 +1,111 @@
+.book-detail {
+    display: flex;
+    margin-top: 200px;
+    gap: 80px;
+}
+
+.profile {
+    display: flex;
+    gap: 60px;
+}
+
+
+.photo {
+    width: 200px;
+    border: 3px solid var(--firstColor);
+    border-radius: 50%;
+}
+
+.star-user {
+    width: 150px;
+    margin: 5px 0;
+}
+
+.name {
+    color: var(--firstColor);
+    margin: 0;
+}
+
+.stars-subtitle {
+    color: var(--gray);
+    margin-bottom: 5px;
+}
+
+.data-user a {
+    color: var(--firstColor);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+
+.biggerbook {
+    width: 411px;
+    margin: 60px;
+}
+
+.book-inside {
+    border: 3px solid var(--firstColor);
+    margin-left: 50px;
+    position: relative;
+}
+
+.book-description {
+    margin-top: 80px;
+}
+
+.book-description p{
+    margin: 20px 0px 40px 0px;
+    color: var(--firstColor);
+    font-weight: 600;
+
+}
+
+.about-book {
+    color: var(--secondColor);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.contact-phrase {
+    color: var(--firstColor);
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.contact-icon {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-icon-like {
+    background-color: var(--white);
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--firstColor);
+    border-radius: 50px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    overflow: hidden; 
+}
+
+.btn-icon-like img {
+    width: 40px;
+}
+
+.big-tag-green {
+    background-color: var(--compColor01);
+    color: var(--firstColor);
+    font-weight: 400;
+    font-size: 32px;
+    padding: 5px 20px;
+    position: absolute;
+    bottom: 40px;
+    right: 205px;
+    border-radius: 4px;
+}
+
+
+
