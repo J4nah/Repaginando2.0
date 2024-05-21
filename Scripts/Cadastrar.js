@@ -25,6 +25,11 @@ async function CadastrarUsuario() {
         return null;
     }
 
+    if(!validarEmail(email)){
+        window.alert('Formato de email incopatível. Tente novamente.');
+        return null;
+    }
+
     if(nomeCompleto === ""){
         window.alert('Preencha o campo Nome completo');
         return null;
