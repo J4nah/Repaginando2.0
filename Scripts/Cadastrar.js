@@ -21,22 +21,22 @@ async function CadastrarUsuario() {
     }
 
     if(email === ""){
-        window.alert('Preencha o campo email');
+        console.log('Preencha o campo email');
         return null;
     }
 
     if(!validarEmail(email)){
-        window.alert('Formato de email incopatível. Tente novamente.');
+        console.warn('Formato de email incompatível. Tente novamente.');
         return null;
     }
 
     if(nomeCompleto === ""){
-        window.alert('Preencha o campo Nome completo');
+        console.log('Preencha o campo Nome completo');
         return null;
     }
 
     if(!confirmaSenha()){
-        window.alert('Confirme sua senha novamente.');
+        console.log('Confirme sua senha novamente.');
         return null;
     }
 
@@ -56,14 +56,23 @@ async function CadastrarUsuario() {
         if (response.status === 201) {
             console.log('Usuario criado com sucesso');
             console.log(data);
+
+            sessionStorage.setItem('id', data.id);
+            sessionStorage.setItem('senha', data.senha);
+            sessionStorage.setItem('email', data.email);
+            sessionStorage.setItem('nome', data.nome);
+
+            window.alert("deu certo!")
+
             window.location.href = 'home-logado.html';
         }
     } catch (error) {
-        console.error(error);
+        console.error('Erro ao criar usuário:', error);
     } finally {
         console.log('Requisição concluída');
     }
 }
+
 
 async function aviso(){
     console.log(`O ERRO:

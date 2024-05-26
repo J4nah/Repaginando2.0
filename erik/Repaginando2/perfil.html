@@ -42,25 +42,27 @@
             <div class="home-flex-main">
                 <div class="home-flex">
                     <img class="img-home" src="imagens/pessoas/mulher-01.png" alt="">
-                    <p>Olá, Roberta!</p>
+                    <p id="mensagemOla"></p>
                 </div>
-                <a class="btn-line" href="index.html">Sair</a>
+                <a class="btn-line" onclick={Sair()}>Sair</a>
             </div>
         </nav>
     </header>
     <main>
         <div class="perfil-publico">
             <div class="profile">
-                <img class="photo" src="imagens/pessoas/mulher-01.png" alt="Foto do usuário">
+                <img id="profile-photo-preview" class="photo" src="imagens/pessoas/mulher-01.png" alt="Foto do usuário">
+                <input type="file" id="update-photo" class="file-input">
+                <label for="update-photo" class="button button-photo update-photo-button">Atualizar foto</label>
                 <div class="data-user">
-                    <h2 class="name">Roberta Ferreira</h2>
+                    <input placeholder="Nome do usuario" class="name" id="nomeUsuario"></input>
                     <p>Editar nome</p>
                     <div class="container-about">
                         <h2 class="h2-profile">Sobre mim</h2>
-                        <p class="text-bio">Para mim a leitura vai além de um simples passatempo, é uma jornada de
-                            crescimento pessoal e uma fonte constante de inspiração.</p>
+                        <!-- Substitua o parágrafo por um textarea -->
+                        <textarea id="bio-input"
+                            class="text-bio-input">Para mim a leitura vai além de um simples passatempo, é uma jornada de crescimento pessoal e uma fonte constante de inspiração.</textarea>
                     </div>
-
                 </div>
             </div>
             <h2 class="h2-profile02">Selecione pelo menos 5 gêneros do seu interesse</h2>
@@ -117,16 +119,16 @@
                     <div>
                         <input type="checkbox" id="ensaios" name="genero" value="ensaios">
                         <label for="ensaios">Ensaios</label><br>
-                    
+
                         <input type="checkbox" id="filosofia" name="genero" value="filosofia">
                         <label for="filosofia">Filosofia</label><br>
-                    
+
                         <input type="checkbox" id="autoajuda" name="genero" value="autoajuda">
                         <label for="autoajuda">Autoajuda</label><br>
-                    
+
                         <input type="checkbox" id="viagem" name="genero" value="viagem">
                         <label for="viagem">Viagem</label><br>
-                    
+
                         <input type="checkbox" id="religiao" name="genero" value="religiao">
                         <label for="religiao">Religião</label><br>
                     </div>
@@ -146,11 +148,13 @@
                 <form class="flex-form" action="#">
                     <div>
                         <label class="text-profile" for="telefone">Telefone</label><br>
-                        <input class="style-box-profile-contact" type="tel" id="telefone" name="telefone" placeholder="+55 (21) 91245-6789"><br>
+                        <input class="style-box-profile-contact" type="tel" id="telefone" name="telefone"
+                            placeholder="+55 (21) 91245-6789"><br>
                     </div>
                     <div>
                         <label class="text-profile" for="email">E-mail</label> <br>
-                        <input class="style-box-profile-contact" type="email" id="email" name="email" placeholder="contato@seuemail.com.br">
+                        <input class="style-box-profile-contact" type="email" id="email" name="email"
+                            placeholder="contato@seuemail.com.br">
                     </div>
                 </form>
             </div>
@@ -204,6 +208,14 @@
         <div class="divider-line"></div>
         <p class="copyright">Copyright © 2024 Repaginando. Todos os direitos reservados.</p>
     </footer>
+    <script src="../../Scripts/utils.js"></script>
+    <script src="../../Scripts/ValidaEmail.js"></script>
+    <script src="../../Scripts/ValidaTelefone.js"></script>
+    <script src="../../Scripts/IBGE.js"></script>
+    <script src="../../Scripts/Sair.js"></script>
+    <script src="../../Scripts/profileImg.js"></script>
+    <script src="../../Scripts/PopulateProfile.js"></script>
+    
 </body>
 
 </html>

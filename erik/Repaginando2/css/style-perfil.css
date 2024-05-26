@@ -1,4 +1,4 @@
-body{
+body {
     overflow-x: hidden;
 }
 
@@ -75,3 +75,91 @@ body{
     display: flex;
     gap: 30px;
 }
+
+
+/* BIGEUS: */
+/* Adicione estilos para o input */
+/* Estilizar nome do usuario */
+.name {
+    font-size: 24px;
+    /* Mesmo tamanho de fonte do seu .h2-profile */
+    font-weight: 600;
+    /* Mesmo peso de fonte do seu .h2-profile */
+    color: var(--firstColor)
+        /* Cor de texto desejada */
+    ;
+    border: none;
+    /* Remove a borda padrão */
+    outline: none;
+    /* Remove o contorno de foco */
+    background-color: transparent;
+    /* Torna o fundo transparente */
+    width: 100%;
+    /* Ocupa toda a largura disponível */
+}
+
+/* Aplica efeito de hover semelhante ao parágrafo, se necessário */
+.name:hover {
+    border-bottom: 2px solid var(--secondColor);
+    /* Apenas borda inferior para simular efeito de sublinhado ao passar o mouse */
+}
+
+/* Estilizar a bio do usuario */
+/* Adicione estilos para o textarea */
+.text-bio-input {
+    font-size: 20px;
+    /* Mesmo tamanho de fonte do seu .text-profile */
+    color: var(--firstColor)
+        /* Cor de texto desejada */
+    ;
+    border: 2px solid var(--firstColor);
+    /* Mesmo estilo de borda do seu .container-about p */
+    border-radius: 15px;
+    /* Mesmo raio de borda do seu .container-about p */
+    padding: 2px 10px;
+    /* Mesmo preenchimento do seu .container-about p */
+    width: 532px;
+    /* Mesma largura do seu .container-about p */
+    outline: none;
+    /* Remove o contorno de foco */
+    background-color: transparent;
+    /* Torna o fundo transparente */
+    resize: none;
+    /* Impede o redimensionamento do textarea */
+}
+
+/* Aplica efeito de hover semelhante ao parágrafo, se necessário */
+.text-bio-input:hover {
+    border: 2px solid var(--secondColor);
+    /* Mesmo estilo de borda ao passar o mouse do seu .container-about p:hover */
+}
+
+/* Esconda o input original */
+.file-input {
+    display: none;
+}
+
+/* Adicione estilos para o label */
+.button {
+    font-size: 20px; /* Mesmo tamanho de fonte do seu .text-profile */
+    color: var(--firstColor) /* Cor de texto desejada */;
+    border: 2px solid var(--firstColor); /* Mesmo estilo de borda do seu .container-about p */
+    border-radius: 15px; /* Mesmo raio de borda do seu .container-about p */
+    padding: 2px 10px; /* Mesmo preenchimento do seu .container-about p */
+    background-color: transparent; /* Torna o fundo transparente */
+    cursor: pointer; /* Muda o cursor para um ponteiro quando o usuário passa o mouse sobre o botão */
+}
+
+/* Esconda o input original */
+#update-photo {
+    display: none;
+}
+
+/* Adicione estilos para o label do botão de foto */
+.update-photo-button {
+    font-size: 16px; /* Tamanho de fonte menor */
+    padding: 5px 10px; /* Menos preenchimento para tornar o botão menor */
+    margin-top: 10px; /* Adiciona espaço acima do botão */
+    height: 50px;
+}
+

@@ -18,11 +18,12 @@ drop table if exists usuario;
 create table usuario (
   Usuario_id    INT          AUTO_INCREMENT,     
   Nome_usuario  VARCHAR(60)  NOT NULL,
-  Celular       VARCHAR(20)  NOT NULL,
-  Email         VARCHAR(60)  NOT NULL,
-  Cidade        VARCHAR(15)  NOT NULL,
-  Uf			VARCHAR(25)	 NOT NULL,
-  Senha         INT          NOT NULL,
+  Celular       VARCHAR(20)  UNIQUE,
+  Email         VARCHAR(60)  UNIQUE NOT NULL,
+  Cidade        VARCHAR(15)  ,
+  Uf			VARCHAR(25)	 ,
+  Senha         varchar(20)  NOT NULL,
+  Usuario_bio 	VARCHAR(200), 
   PRIMARY KEY (Usuario_id)
   );
 
@@ -58,16 +59,32 @@ CREATE TABLE livro (
 );
 
 insert into genero(Genero_nome) values
-('Fantasia'),
 ('Ficção Científica'),
+('Fantasia'),
 ('Romance'),
 ('Mistério'),
-('Policial'),
-('Biografia'),
-('História'),
 ('Suspense'),
-('Espiritualidade'),
-('Filosofia');
+('Terror/Horror'),
+('Policial'),
+('Aventura'),
+('História'),
+('Biografia'),
+('Autobiografia'),
+('Fatos Reais'),
+('Poesia'),
+('Drama'),
+('Comédia'),
+('Crônica'),
+('Ficção Histórica'),
+('Ficção Realista'),
+('Ficção Distópica'),
+('Leitura Infantil'),
+('Ensaios'),
+('Filosofia'),
+('Autoajuda'),
+('Viagem'),
+('Religião');
+
 
 insert into estado(Estado_nome) values
 ('Novo'),
@@ -75,11 +92,11 @@ insert into estado(Estado_nome) values
 ('Bem Usado');
 
 insert into usuario values
-(null,	'Bigeus',		'15998421996',	'bigeus@gmail.com',		'Tatuí',		'SP',	29082003),
-(null,	'Lucas',		'15999999999',	'lucas@gmail.com',		'Tatuí',		'SP',	1234),
-(null,	'Felipe',		'15998877777',	'felipe@gmail.com',		'Tatuí',		'SP',	123321),
-(null,	'Coxa',			'1599777920',	'coxaUri@gmail.com',	'Tatuí',		'SP',	4815),
-(null,	'Teste',		'Celular',		'teste@gmail.com',		'Cidade',		'AC',	123456);
+(null,	'Bigeus',		'15998421996',	'bigeus@gmail.com',		'Tatuí',		'SP',	29082003, 'Funcionando desde 2003 amando livros.'),
+(null,	'Lucas',		'15999999999',	'lucas@gmail.com',		'Tatuí',		'SP',	1234, 'Funcionando desde 2003 amando livros.'),
+(null,	'Felipe',		'15998877777',	'felipe@gmail.com',		'Tatuí',		'SP',	123321, 'Funcionando desde 2003 amando livros.'),
+(null,	'Coxa',			'1599777920',	'coxaUri@gmail.com',	'Tatuí',		'SP',	4815, 'Funcionando desde 2003 amando livros.'),
+(null,	'Teste',		'Celular',		'teste@gmail.com',		'Cidade',		'AC',	123456, 'Funcionando desde 2003 amando livros.');
 
 insert into livro (Nome,Ano_Publi,Qtde_Paginas,Editora,Autor,Genero_id,Estado_id)values
 ('Harry Potter e a Câmara Secreta',		1998,		287,		'Rocco',				'J. K. Rowling',				1,2),
@@ -96,27 +113,30 @@ insert into livro (Nome,Ano_Publi,Qtde_Paginas,Editora,Autor,Genero_id,Estado_id
   foreign key(Genero_id)  references	genero(Genero_id)
   );
   insert into genero_usuario values
-(1,1),										-- 	(1, "Fantasia");
-(2,1),										-- 	(2, "Ficção Científica");
-(4,1),										-- 	(3, "Romance");
-(7,1),										-- 	(4, "Mistério");
-(10,1),										-- 	(5, "Policial");	
-(1,2),										-- 	(6, "Biografia");
-(2,2),										-- 	(7, "História");
-(4,2),										-- 	(8, "Suspense");
-(7,2),										-- 	(9, "Espiritualidade");
-(2,3),										-- 	(10, "Filosofia");
-(10,3),										
-(5,3),
-(4,3),
-(7,3),
-(2,4),
-(1,4),
-(8,4),
-(4,4);
+(1,1),										-- 	(1, "Ficção Científica");							(20, "Leitura Infantil");
+(2,1),										-- 	(2, "Fantasia");									(21, "Ensaios");
+(4,1),										-- 	(3, "Romance");										(22, "Filosofia");
+(7,1),										-- 	(4, "Mistério");									(23, "Autoajuda");
+(10,1),																									
+											-- 	(5, "Suspense");									(24, "Viagem");
+(1,2),										-- 	(6, "Terror/Horror");								(25, "Religião");
+(2,2),										-- 	(7, "Policial");
+(4,2),										-- 	(8, "Aventura");
+(7,2),	
+											-- 	(9, "História");
+(2,3),										-- 	(10, "Biografia");
+(10,3),										--  (11, "Autobiografia");
+(5,3),										--  (12, "Fatos Reais");
+(4,3),										--  (13, "Poesia");
+(7,3),										--  (14, "Drama");
+											--  (15, "Comédia");
+(2,4),										--  (16, "Crônica");
+(1,4),										--  (17, "Ficção Histórica");
+(8,4),										--  (18, "Ficção Realista");
+(4,4);										--  (19, "Ficção Distópica");
 
-drop table if exists Trocas;
-create table Trocas(
+drop table if exists livro_usuario;
+create table livro_usuario(
 Usuario_id int ,
 Livro_id int,
 
@@ -125,7 +145,7 @@ FOREIGN KEY	(Livro_id) 	references	livro(Livro_id),
 CONSTRAINT UC_UsuarioLivro unique (Usuario_id, Livro_id)
 );
 
-insert into trocas values
+insert into livro_usuario values
 (1,1),
 (1,2),
 (1,3);          -- trocas de Vinicius pelo script
@@ -154,11 +174,10 @@ insert into frases values
 (null,"Nada é mais necessário do que a aparência de religiosidade. De modo geral, os homens julgam mais com os olhos do que com o tato: todos podem ver, mas poucos são capazes de sentir.","Maquiavel"),
 (null,"Quantas oportunidades temos de melhorar, dramaticamente, as vidas das pessoas apenas fazendo nosso trabalho um pouco melhor?","Steve Krug");
 
+-- DELETE FROM usuario WHERE Usuario_id = 15;
 
+ select * from usuario;
 
+-- select * from frases;
 
-
-
-select * from frases;
-
--- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '29De082003$';
+-- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';

@@ -70,17 +70,22 @@ app.get('/frase', async (req, res) => {
 
 // cadastro de usuario basic
 app.post('/usuario/cadastro', async (req, res) => {
-  const { nomeCompleto, email, senha } = req.body; // substitua pelos campos do seu usuário
+  const { nomeCompleto, email, senha } = req.body;
   try {
     const [rows] = await pool.query(`INSERT INTO usuario (Nome_usuario, Email, Senha) VALUES (?, ?, ?)`,
       [nomeCompleto, email, senha]);
 
-    res.status(201).send({ message: 'Usuário criado com sucesso!' });
+    // Obter o ID do usuário inserido
+    const id = rows.insertId;
+
+    // Retornar os detalhes do usuário na resposta
+    res.status(201).send({ id: id, nome: nomeCompleto, email: email, senha: senha, message: 'Usuário criado com sucesso!' });
 
   } catch (error) {
     res.status(500).send({ message: 'Erro ao criar usuário.' });
   }
 })
+
 
 // login
 app.post('/login', async (req, res) => {
@@ -94,6 +99,17 @@ app.post('/login', async (req, res) => {
     }
   } catch (error) {
     res.status(500).send({ message: 'Erro ao buscar usuário' });
+  }
+});
+
+// perfil próprio
+app.post('/usuario', async (req, res) => {
+  const userId = req.body.id;
+  const [rows] = await pool.query(`SELECT * FROM usuario WHERE Usuario_id = ?`, [userId]);
+  if (rows.length > 0) {
+    res.send(rows[0]);
+  } else {
+    res.status(404).send({ message: 'Usuário não encontrado' });
   }
 });
 
