@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const userId = idSession || idLocal;
 
+        // Carregar as imagens de perfil do localStorage
+        let storedProfileImages = localStorage.getItem('profileImages');
+        if (storedProfileImages) {
+            profileImages = JSON.parse(storedProfileImages);
+        }
+
         try {
             const response = await fetch('http://localhost:3000/usuario', {
                 method: 'POST',
@@ -31,16 +37,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             buscarEstados(usuario.Uf);
             buscarCidades(usuario.Cidade, usuario.Uf);
-            
-            if(usuario.Celular && usuario.Email){
+
+            if (usuario.Celular && usuario.Email) {
                 document.getElementById('telefone').value = usuario.Celular;
                 document.getElementById('email').value = usuario.Email;
             }
 
             // Atualiza a foto do perfil com base no ID do usuário
-            const profilePhoto = profileImages[userId] || 'imagens/pessoas/UsuarioPadraoPic.jpg';
+            const profilePhoto = profileImages[userId - 1] || 'imagens/pessoas/UsuarioPadraoPic.jpg';
             document.getElementById('profile-photo').src = profilePhoto;
             document.getElementById('profile-photo-preview').src = profilePhoto;
+            document.getElementById('header-profile-photo').src = profilePhoto;
         } catch (error) {
             console.error('Erro ao buscar dados do usuário:', error);
         }
@@ -63,7 +70,20 @@ function handleFileSelect(event) {
                 canvas.height = 500;
                 ctx.drawImage(img, 0, 0, 500, 500);
                 const dataUrl = canvas.toDataURL('image/png');
+
+                // Atualiza as imagens de perfil
+                document.getElementById('profile-photo').src = dataUrl;
                 document.getElementById('profile-photo-preview').src = dataUrl;
+                document.getElementById('header-profile-photo').src = dataUrl;
+
+                // Atualiza a constante profileImages com a nova imagem
+                const userId = sessionStorage.getItem('id') || localStorage.getItem('id');
+                if (userId) {
+                    profileImages[userId - 1] = dataUrl;
+
+                    // Salvar a constante profileImages no localStorage
+                    localStorage.setItem('profileImages', JSON.stringify(profileImages));
+                }
             }
             img.src = e.target.result;
         }
@@ -72,11 +92,18 @@ function handleFileSelect(event) {
 }
 
 // Simulação do armazenamento das imagens de perfil
-const profileImages = [
-    'imagens/pessoas/Bigeus.jpg',
-    'imagens/pessoas/UsuarioPadraoPic.jpg',
-    'imagens/pessoas/UsuarioPadraoPic.jpg',
-    'imagens/pessoas/UsuarioPadraoPic.jpg',
-    'imagens/pessoas/Spike.jpg',
-    // Adicione mais caminhos de imagens conforme necessário
+let profileImages = [
+    "imagens/pessoas/Bigeus.jpg",
+    "imagens/pessoas/UsuarioPadraoPic.jpg",
+    "imagens/pessoas/UsuarioPadraoPic.jpg",
+    "imagens/pessoas/UsuarioPadraoPic.jpg",
+    "imagens/pessoas/Spike.jpg",
 ];
+
+// Carregar as imagens de perfil do localStorage ao iniciar
+document.addEventListener('DOMContentLoaded', () => {
+    let storedProfileImages = localStorage.getItem('profileImages');
+    if (storedProfileImages) {
+        profileImages = JSON.parse(storedProfileImages);
+    }
+});

@@ -1,4 +1,4 @@
-document.getElementById('update-photo').addEventListener('change', handleFileSelect);
+/* document.getElementById('update-photo').addEventListener('change', handleFileSelect);
 
 function handleFileSelect(event) {
     const file = event.target.files[0];
@@ -20,3 +20,4 @@ function handleFileSelect(event) {
         reader.readAsDataURL(file);
     }
 }
+ */

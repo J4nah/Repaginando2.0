@@ -154,6 +154,9 @@ body {
 #update-photo {
     display: none;
 }
+.photo-preview {
+    display: none; /* ou outras regras de estilo conforme necessário */
+}
 
 /* Adicione estilos para o label do botão de foto */
 .update-photo-button {
