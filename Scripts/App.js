@@ -113,6 +113,43 @@ app.post('/usuario', async (req, res) => {
   }
 });
 
+// generos interesse
+app.post('/generos_usuario', async (req, res) => {
+  const userId = req.body.id;
+  const [rows] = await pool.query(`SELECT * FROM genero_usuario WHERE Usuario_id = ?`, [userId]);
+  if (rows.length > 0) {
+    res.send(rows);
+  } else {
+    res.status(404).send({ message: 'Gêneros para o usuário não encontrados' });
+  }
+});
+
+// Atualizar dados do usuário
+app.put('/atualizar_usuario/:id', async (req, res) => {
+  const userId = req.params.id;
+  const { Nome_usuario, Email, Celular, Cidade, Uf, Usuario_bio } = req.body;
+
+  // Verificar se o usuário existe antes de tentar atualizar
+  const [userRows] = await pool.query(`SELECT * FROM usuario WHERE Usuario_id = ?`, [userId]);
+  if (userRows.length === 0) {
+    return res.status(404).send({ message: 'Usuário não encontrado' });
+  }
+
+  try {
+    // Atualizar os dados do usuário no banco
+    await pool.query(
+      `UPDATE usuario SET Nome_usuario = ?, Email = ?, Celular = ?, Cidade = ?, Uf = ?, Usuario_bio = ? WHERE Usuario_id = ?`,
+      [Nome_usuario, Email, Celular, Cidade, Uf, Usuario_bio, userId]
+    );
+    res.send({ message: 'Dados do usuário atualizados com sucesso' });
+  } catch (error) {
+    console.error('Erro ao atualizar dados do usuário:', error);
+    res.status(500).send({ message: 'Erro ao atualizar dados do usuário' });
+  }
+});
+
+
+
 
 app.listen(3000, () => {
   console.log('Servidor rodando na porta 3000');

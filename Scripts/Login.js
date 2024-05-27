@@ -41,6 +41,11 @@ async function Login(){
             localStorage.setItem('senha', senha);
             localStorage.setItem('email', email);
             localStorage.setItem('nome', usuario.Nome_usuario);
+        }else{
+            sessionStorage.setItem('id', usuario.Usuario_id);
+            sessionStorage.setItem('senha', senha);
+            sessionStorage.setItem('email', email);
+            sessionStorage.setItem('nome', usuario.Nome_usuario);
         }
        window.location.href = 'home-logado.html';
        } else {
