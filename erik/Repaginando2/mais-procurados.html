@@ -23,17 +23,17 @@
                 </ul>
             </div>
             <div class="search-group">
-                <form id="searchForm">
-                    <input class="search-field" type="text" placeholder="Pesquise por autor ou livro...">
-                    <button type="button" class="btn-icon"><a href="#"><img src="imagens/Lupa.svg"
-                                alt="Lupa"></a></button>
+                <form id="book-search-form" method="GET">
+                    <input id="search-input" class="search-field" type="text" name="searchTerm"
+                        placeholder="Pesquise por autor ou livro...">
+                    <button type="submit" class="btn-icon"><img src="imagens/Lupa.svg" alt="Lupa"></button>
                     <div class="radio">
                         <div class="authorSearch">
-                            <input type="radio" name="searchType" value="author">
+                            <input type="radio" name="searchType" value="author" id="authorSearch">
                             <label for="authorSearch">Pesquisar por autor</label>
                         </div>
                         <div class="bookSearch">
-                            <input type="radio" name="searchType" value="book">
+                            <input type="radio" name="searchType" value="title" id="bookSearch">
                             <label for="bookSearch">Pesquisar por livro</label>
                         </div>
                     </div>
@@ -51,7 +51,8 @@
             <h2>Mais procurados</h2>
             <div class="books">
                 <div class="container-book">
-                    <a href="livro.html"><img class="size-book" src="imagens/livros/01 - Alice no país das maravilhas.jpg"
+                    <a href="livro.html"><img class="size-book"
+                            src="imagens/livros/01 - Alice no país das maravilhas.jpg"
                             alt="Livro Alice no país das maravilhas"></a>
                     <p class="tag-green">Novo</p>
                     <div class="text-icon">
@@ -71,7 +72,8 @@
                     <img class="stars" src="imagens/avaliacoes/avaliacao-03.png" alt="avaliação 3 estrelas">
                 </div>
                 <div class="container-book">
-                    <a href="livro.html"><img class="size-book" src="imagens/livros/03 - Harry Potter e a câmara secreta.jpg"
+                    <a href="livro.html"><img class="size-book"
+                            src="imagens/livros/03 - Harry Potter e a câmara secreta.jpg"
                             alt="Livro Harry Potter e a câmara secreta"></a>
                     <p class="tag-green">Novo</p>
                     <div class="text-icon">
@@ -102,7 +104,7 @@
                 </div>
             </div>
             <div class="btn-main"></div>
-            </div>
+        </div>
         </div>
         <span class="destaque-books"></span>
         <div class="container-2">
@@ -128,7 +130,8 @@
                     <img class="stars" src="imagens/avaliacoes/avaliacao-05.png" alt="avaliação 5 estrelas">
                 </div>
                 <div class="container-book">
-                    <a href="livro.html"><img class="size-book" src="imagens/livros/08 - A bíblia do marketing digital.jpg"
+                    <a href="livro.html"><img class="size-book"
+                            src="imagens/livros/08 - A bíblia do marketing digital.jpg"
                             alt="Livro A bíblia do marketing digital"></a>
                     <p class="tag-red">Danificado</p>
                     <div class="text-icon">
@@ -209,6 +212,7 @@
         <div class="divider-line"></div>
         <p class="copyright">Copyright © 2024 Repaginando. Todos os direitos reservados.</p>
     </footer>
+    <script src="js/pesquisa-dividida.js"></script>
 </body>
 
 </html>

@@ -23,17 +23,17 @@
                 </ul>
             </div>
             <div class="search-group">
-                <form id="searchForm">
-                    <input class="search-field" type="text" placeholder="Pesquise por autor ou livro...">
-                    <button type="button" class="btn-icon"><a href="#"><img src="imagens/Lupa.svg"
-                                alt="Lupa"></a></button>
+                <form id="book-search-form" method="GET">
+                    <input id="search-input" class="search-field" type="text" name="searchTerm"
+                        placeholder="Pesquise por autor ou livro...">
+                    <button type="submit" class="btn-icon"><img src="imagens/Lupa.svg" alt="Lupa"></button>
                     <div class="radio">
                         <div class="authorSearch">
-                            <input type="radio" name="searchType" value="author">
+                            <input type="radio" name="searchType" value="author" id="authorSearch">
                             <label for="authorSearch">Pesquisar por autor</label>
                         </div>
                         <div class="bookSearch">
-                            <input type="radio" name="searchType" value="book">
+                            <input type="radio" name="searchType" value="title" id="bookSearch">
                             <label for="bookSearch">Pesquisar por livro</label>
                         </div>
                     </div>
@@ -120,6 +120,7 @@
         <div class="divider-line"></div>
         <p class="copyright">Copyright © 2024 Repaginando. Todos os direitos reservados.</p>
     </footer>
+    <script src="js/pesquisa-dividida.js"></script>
 </body>
 
 </html>

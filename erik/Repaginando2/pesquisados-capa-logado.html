@@ -13,13 +13,13 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html"><img src="imagens/Logo.svg" alt="Logo repaginando"></a>
+                <a href="home-logado.html"><img src="imagens/Logo.svg" alt="Logo repaginando"></a>
             </div>
             <div class="menu">
                 <ul>
-                    <li><a class="menu-decor" href="index.html">Home</a></li>
-                    <li><a class="menu-decor" href="tela-login.html">Perfil</a></li>
-                    <li><a class="menu-decor" href="tela-login.html">Meus Livros</a></li>
+                    <li><a class="menu-decor" href="home-logado.html">Home</a></li>
+                    <li><a class="menu-decor" href="perfil.html">Perfil</a></li>
+                    <li><a class="menu-decor" href="#">Meus Livros</a></li>
                 </ul>
             </div>
             <div class="search-group">
@@ -39,43 +39,20 @@
                     </div>
                 </form>
             </div>
-            <div>
-                <a class="btn-line" href="tela-login.html">Entrar</a>
-                <a class="btn-solid" href="cadastre-se.html">Inscreva-se</a>
+            <div class="home-flex-main">
+                <div class="home-flex">
+                    <img class="img-home" src="imagens/pessoas/mulher-01.png" alt="">
+                    <p>Olá, Roberta!</p>
+                </div>
+                <a class="btn-line" href="index.html">Sair</a>
             </div>
         </nav>
     </header>
     <main>
-        <div class="login">
-            <div class="box-login">
-                <h2 class="h2-center">Acesse a sua conta</h2>
-                <form action="/submit" method="post">
-                    <div class="group-acess01">
-                      <label class="font-24" for="Email">Email</label> <br>
-                      <input class="field-login" type="text" id="Email" name="Email" required>
-                    </div>
-                    <div class="group-acess02">
-                      <label class="font-24" for="senha">Senha</label> <br>
-                      <input class="field-login " type="password" id="senha" name="senha" required>
-                    </div>
-                    <div class="flex-login group-acess03">
-                        <div>
-                          <input type="checkbox" id="manterConectado" name="manterConectado">
-                          <label class="label-login" for="manterConectado">Manter conectado</label>
-                        </div>
-                        <a class="forget" href="recuperar-senha.html"><strong>Esqueci a senha</strong></a>
-                    </div>
-                    <div class="btn-size">
-                        <a class="btn-line btn-login" onclick={Login()}>Entrar</a>
-                    </div>
-                </form>
-                <div class="create">
-                    <p>Não tem uma conta? <a href="cadastre-se.html"><strong>Cadastre-se</strong></a></p>
-                </div>
-            </div>
-        </div>
-        <p class="last-text">Ao continuar, você concorda com os com os <a href="termos-uso.html"><strong>Termos de Uso</strong></a> e <a href="politicas-privacidade.html"><strong>Política de Privacidade</strong></a> <br>
-            da Repaginando e seus parceiros, e em receber nossas comunicações.</p>
+        <img class="banner" src="imagens/banner-site.jpg" alt="banner-site">
+
+        <div id="book-info" class="book01"></div>
+
     </main>
     <footer>
         <div class="footer-flex">
@@ -125,10 +102,8 @@
         <div class="divider-line"></div>
         <p class="copyright">Copyright © 2024 Repaginando. Todos os direitos reservados.</p>
     </footer>
-    <script src="../../Scripts/utils.js"></script>
-    <!-- <script src="../../Scripts/App.js"></script> -->
-    <script src="../../Scripts/Login.js"></script>
-    <script src="js/pesquisa-dividida.js"></script>
+    <script src="js/pesquisa-dividida-logado.js"></script>
+    <script src="js/detalhes-livro-logado.js"></script>
 </body>
 
 </html>
