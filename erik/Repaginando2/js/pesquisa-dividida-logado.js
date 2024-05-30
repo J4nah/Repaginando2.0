@@ -42,15 +42,27 @@ fetch(url)
 
 document.getElementById('book-search-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    const searchTerm = document.getElementById('search-input').value;
-    const searchType = document.querySelector('input[name="searchType"]:checked').value;
+
+    const searchTerm = document.getElementById('search-input');
+    const authorSearch = document.getElementById('authorSearch');
+    const livroSearch = document.getElementById('bookSearch');
+
+    if (!searchTerm || !authorSearch || !livroSearch) {
+        window.alert("Todos os campos são necessários.");
+        return;
+    }
+
+    if (!authorSearch.checked && !livroSearch.checked) {
+        window.alert("Selecione um parâmetro de pesquisa.");
+        return;
+    }
 
     let url = '';
 
-    if (searchType === 'title') {
-        url = `pesquisados-capa-logado.html?searchTerm=${encodeURIComponent(searchTerm)}&searchType=${encodeURIComponent(searchType)}`;
-    } else if (searchType === 'author') {
-        url = `pesquisados-capa-logado.html?searchTerm=${encodeURIComponent(searchTerm)}&searchType=${encodeURIComponent(searchType)}`;
+    if (livroSearch.checked) {
+        url = `pesquisados-capa-logado.html?searchTerm=${encodeURIComponent(searchTerm.value)}&searchType=title`;
+    } else if (authorSearch.checked) {
+        url = `pesquisados-capa-logado.html?searchTerm=${encodeURIComponent(searchTerm.value)}&searchType=author`;
     }
 
     window.location.href = url;

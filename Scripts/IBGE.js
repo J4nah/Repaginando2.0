@@ -43,3 +43,8 @@ async function buscarCidades(defaultCidade, uf) {
         console.error('Erro ao buscar cidades:', error);
     }
 }
+
+// Adicionando event listeners para os selects de estado e cidade
+document.getElementById('estado').addEventListener('change', function() {
+    buscarCidades(null, this.value);
+});

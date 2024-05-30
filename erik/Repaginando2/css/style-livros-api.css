@@ -1,4 +1,5 @@
 .book01 {
+    margin-top: 150px; /* BIGEUS DID THIS */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -65,4 +66,9 @@
 .book-info p {
     margin-top: 5px;
     font-size: 0.9em;
+}
+
+/* BIGEUS DID THIS: */
+.book-details2 {
+    margin-top: 150px;
 }

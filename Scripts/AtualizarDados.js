@@ -1,4 +1,9 @@
+document.getElementById('btnAtualizarDados').addEventListener('click', AtualizarDados);
+
 async function AtualizarDados() {
+    // Prevenir o comportamento padrão do botão
+    event.preventDefault();
+
     // Obter os valores dos inputs
     var nomeUsuario = document.getElementById('nomeUsuario').value;
     var bio = document.getElementById('bio-input').value;
@@ -34,10 +39,36 @@ async function AtualizarDados() {
             body: JSON.stringify(dadosAtualizados)
         });
         const data = await response.json();
+
+        if (!isUsingLocalStorage) {
+            localStorage.clear();
+            localStorage.setItem('id', idUsuarioUtil);
+            localStorage.setItem('estado', estado);
+            localStorage.setItem('celular', celular);
+            localStorage.setItem('cidade', cidade);
+            localStorage.setItem('bio', bio);
+            localStorage.setItem('email', email);
+            localStorage.setItem('nome', nomeUsuario);
+        } else {
+            sessionStorage.clear();
+            sessionStorage.setItem('id', idUsuarioUtil);
+            sessionStorage.setItem('estado', estado);
+            sessionStorage.setItem('celular', celular);
+            sessionStorage.setItem('cidade', cidade);
+            sessionStorage.setItem('bio', bio);
+            sessionStorage.setItem('email', email);
+            sessionStorage.setItem('nome', nomeUsuario);
+        }
+
         console.log('Dados do usuário atualizados com sucesso:', data);
         alert('Informações atualizadas com sucesso');
+        window.location.href = 'perfil.html'
     } catch (error) {
         console.error('Erro ao atualizar dados do usuário:', error);
         alert('Erro ao atualizar dados do usuário');
     }
+}
+
+function getManterConectado() {
+
 }

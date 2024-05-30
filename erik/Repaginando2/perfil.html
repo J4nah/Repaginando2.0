@@ -51,7 +51,8 @@
     <main>
         <div class="perfil-publico">
             <div class="profile">
-                <img id="profile-photo-preview" class="photo-preview" src="imagens/pessoas/UsuarioPadraoPic.jpg" alt="Pré-visualização da foto do usuário">
+                <img id="profile-photo-preview" class="photo-preview" src="imagens/pessoas/UsuarioPadraoPic.jpg"
+                    alt="Pré-visualização da foto do usuário">
                 <img id="profile-photo" class="photo" src="imagens/pessoas/UsuarioPadraoPic.jpg" alt="Foto do usuário">
                 <input type="file" id="update-photo" class="file-input">
                 <label for="update-photo" class="button button-photo update-photo-button">Atualizar foto</label>
@@ -139,6 +140,33 @@
             <form action="#">
                 <select class="box-state style-box-profile" id="estado" name="estado" onchange="mostrarCidades()">
                     <option value="">Estado</option>
+                    <option value="">AC</option>
+                    <option value="">AL</option>
+                    <option value="">AP</option>
+                    <option value="">AM</option>
+                    <option value="">BA</option>
+                    <option value="">CE</option>
+                    <option value="">DF</option>
+                    <option value="">ES</option>
+                    <option value="">GO</option>
+                    <option value="">MA</option>
+                    <option value="">MT</option>
+                    <option value="">MS</option>
+                    <option value="">MG</option>
+                    <option value="">PA</option>
+                    <option value="">PB</option>
+                    <option value="">PR</option>
+                    <option value="">PE</option>
+                    <option value="">PI</option>
+                    <option value="">RJ</option>
+                    <option value="">RN</option>
+                    <option value="">RS</option>
+                    <option value="">RO</option>
+                    <option value="">RR</option>
+                    <option value="">SC</option>
+                    <option value="">SP</option>
+                    <option value="">SE</option>
+                    <option value="">TO</option>
                 </select>
                 <select class="style-box-profile" id="cidades" name="cidade">
                     <option value="">Cidade</option>
@@ -156,7 +184,8 @@
                         <label class="text-profile" for="email">E-mail</label> <br>
                         <input class="style-box-profile-contact" type="email" id="email" name="email"
                             placeholder="contato@seuemail.com.br">
-                            <button onclick={AtualizarDados()} class="atualizarDados">Atualizar Dados</button>
+                        <button type="button" id="btnAtualizarDados" class="atualizarDados">Atualizar Dados</button>
+
                     </div>
                 </form>
             </div>
@@ -215,12 +244,12 @@
     <script src="../../Scripts/ValidaTelefone.js"></script>
     <script src="../../Scripts/IBGE.js"></script>
     <script src="../../Scripts/Sair.js"></script>
-<!--     <script src="../../Scripts/profileImg.js"></script> -->
+    <!--     <script src="../../Scripts/profileImg.js"></script> -->
     <script src="../../Scripts/PopulateProfile.js"></script>
     <script src="../../Scripts/populateGenerosInteresse.js"></script>
     <script src="../../Scripts/AtualizarDados.js"></script>
     <script src="js/pesquisa-dividida-logado.js"></script>
-    
+
 </body>
 
 </html>

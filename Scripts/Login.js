@@ -1,4 +1,4 @@
-async function Login(){
+async function Login() {
     document.querySelector('form').addEventListener('submit', function (event) {
         event.preventDefault();
     });
@@ -8,12 +8,12 @@ async function Login(){
     const email = document.getElementById('Email').value;
     const senha = document.getElementById('senha').value;
 
-    if(email === ""){
+    if (email === "") {
         window.alert('Preencha o campo Email');
         return null;
     }
 
-    if(senha === ""){
+    if (senha === "") {
         window.alert('Preencha o campo Senha');
         return null;
     }
@@ -28,32 +28,38 @@ async function Login(){
             senha: senha
         })
     })
-    .then(res => res.json())
-    .then(usuario => {
-        
-       if(usuario.Email === email && usuario.Senha === senha){
-        window.alert('Login feito com sucesso!');
+        .then(res => res.json())
+        .then(usuario => {
 
-        // se manterConectado estiver selecionado as informações serão adicionadas ao localStorage, 
-        // ainda n sei sugerir o autoComplete das infos no login
-        if(manterConectado){
-            localStorage.setItem('id', usuario.Usuario_id);
-            localStorage.setItem('senha', senha);
-            localStorage.setItem('email', email);
-            localStorage.setItem('nome', usuario.Nome_usuario);
-        }else{
-            sessionStorage.setItem('id', usuario.Usuario_id);
-            sessionStorage.setItem('senha', senha);
-            sessionStorage.setItem('email', email);
-            sessionStorage.setItem('nome', usuario.Nome_usuario);
-        }
-       window.location.href = 'home-logado.html';
-       } else {
-        window.alert('Login falhou. Verifique o email e senha.');
-        email.value = "";
-        senha.value = "";
-       }
-    })
-    .catch(error => console.log(error))
- 
+            if (usuario.Email === email && usuario.Senha === senha) {
+                window.alert('Login feito com sucesso!');
+
+                // se manterConectado estiver selecionado as informações serão adicionadas ao localStorage, 
+                // ainda n sei sugerir o autoComplete das infos no login
+                if (manterConectado) {
+                    localStorage.setItem('id', usuario.Usuario_id);
+                    localStorage.setItem('senha', senha);
+                    localStorage.setItem('email', email);
+                    localStorage.setItem('nome', usuario.Nome_usuario);
+                } else {
+                    sessionStorage.setItem('id', usuario.Usuario_id);
+                    sessionStorage.setItem('senha', senha);
+                    sessionStorage.setItem('email', email);
+                    sessionStorage.setItem('nome', usuario.Nome_usuario);
+                    console.log('Nome do usuário armazenado:', sessionStorage.getItem('nome'));
+
+                }
+
+                idUsuarioUtil = sessionStorage.getItem('id') || localStorage.getItem('id')
+                console.log(idUsuarioUtil)
+
+                window.location.href = 'home-logado.html';
+            } else {
+                window.alert('Login falhou. Verifique o email e senha.');
+                email.value = "";
+                senha.value = "";
+            }
+        })
+        .catch(error => console.log(error))
+
 }

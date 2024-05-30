@@ -41,15 +41,15 @@
             </div>
             <div class="home-flex-main">
                 <div class="home-flex">
-                    <img class="img-home" src="imagens/pessoas/mulher-01.png" alt="">
-                    <p>Olá, Roberta!</p>
+                    <img class="img-home" id="header-profile-photo" src="imagens/pessoas/mulher-01.png" alt="">
+                    <p id="mensagemOla">Olá, Roberta!</p>
                 </div>
-                <a class="btn-line" href="index.html">Sair</a>
+                <a class="btn-line" onclick={Sair()}>Sair</a>
             </div>
         </nav>
     </header>
     <main>
-        <img class="banner" src="imagens/banner-site.jpg" alt="banner-site">
+        <!-- <img class="banner" src="imagens/banner-site.jpg" alt="banner-site">  BIGEUS DID THIS  -->
 
         <div id="book-info" class="book01"></div>
 
@@ -104,6 +104,8 @@
     </footer>
     <script src="js/pesquisa-dividida-logado.js"></script>
     <script src="js/detalhes-livro-logado.js"></script>
+    <script src="../../Scripts/updateHeader.js"></script>
+    <script src="../../Scripts/Sair.js"></script>
 </body>
 
 </html>

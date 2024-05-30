@@ -97,7 +97,7 @@ nav {
     border: 2px solid var(--firstColor); 
 }
 
-.btn-icon:hover a img {
+.btn-icon:hover img {
     filter: brightness(0) invert(1);
 }
 

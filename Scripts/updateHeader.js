@@ -1,18 +1,25 @@
-let profileImages = [
-    "imagens/pessoas/Bigeus.jpg",
-    "imagens/pessoas/UsuarioPadraoPic.jpg",
-    "imagens/pessoas/UsuarioPadraoPic.jpg",
-    "imagens/pessoas/UsuarioPadraoPic.jpg",
-    "imagens/pessoas/Spike.jpg",
-];
-
 document.addEventListener('DOMContentLoaded', async () => {
     async function UpdateHeader() {
+
+        let profileImages = [
+            "imagens/pessoas/Bigeus.jpg",
+            "imagens/pessoas/UsuarioPadraoPic.jpg",
+            "imagens/pessoas/UsuarioPadraoPic.jpg",
+            "imagens/pessoas/UsuarioPadraoPic.jpg",
+            "imagens/pessoas/Spike.jpg",
+        ];
+
         const userId = sessionStorage.getItem('id') || localStorage.getItem('id');
 
         if (!userId) {
             console.log('ID não encontrado no SESSION ou LOCAL storage.');
             return;
+        }
+
+        // Verificar se existe imagem setada no localStorage
+        let storedProfileImages = localStorage.getItem('profileImages');
+        if (storedProfileImages) {
+            profileImages = JSON.parse(storedProfileImages);
         }
 
         const profilePhoto = profileImages[userId - 1] || 'imagens/pessoas/UsuarioPadraoPic.jpg';

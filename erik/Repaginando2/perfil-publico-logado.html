@@ -41,10 +41,10 @@
             </div>
             <div class="home-flex-main">
                 <div class="home-flex">
-                    <img class="img-home" src="imagens/pessoas/mulher-01.png" alt="">
-                    <p>Olá, Roberta!</p>
+                    <img class="img-home" id="header-profile-photo" src="imagens/pessoas/mulher-01.png" alt="">
+                    <p id="mensagemOla">Olá, Roberta!</p>
                 </div>
-                <a class="btn-line" href="index.html">Sair</a>
+                <a class="btn-line" onclick={Sair()}>Sair</a>
             </div>
         </nav>
     </header>
@@ -60,11 +60,13 @@
                 </div>
             </div>
             <h2 class="about-me-h2">Sobre mim</h2>
-            <p class="text-bio">Para mim a leitura vai além de um simples passatempo, é uma jornada de crescimento pessoal e uma fonte constante de inspiração.</p>
+            <p class="text-bio">Para mim a leitura vai além de um simples passatempo, é uma jornada de crescimento
+                pessoal e uma fonte constante de inspiração.</p>
             <h2 class="about-me-h2">Livros Disponíveis</h2>
             <div class="books margin-perfil-publico">
                 <div class="container-book">
-                    <a href="livro-logado.html"><img class="size-book" src="imagens/livros/01 - Alice no país das maravilhas.jpg"
+                    <a href="livro-logado.html"><img class="size-book"
+                            src="imagens/livros/01 - Alice no país das maravilhas.jpg"
                             alt="Livro Alice no país das maravilhas"></a>
                     <p class="tag-green">Novo</p>
                     <div class="text-icon">
@@ -73,7 +75,7 @@
                     </div>
                     <img class="stars" src="imagens/avaliacoes/avaliacao-05.png" alt="avaliação 5 estrelas">
                 </div>
-        </div>
+            </div>
     </main>
     <footer>
         <div class="footer-flex">
@@ -124,6 +126,8 @@
         <p class="copyright">Copyright © 2024 Repaginando. Todos os direitos reservados.</p>
     </footer>
     <script src="js/pesquisa-dividida-logado.js"></script>
+    <script src="../../Scripts/updateHeader.js"></script>
+    <script src="../../Scripts/Sair.js"></script>
 </body>
 
 </html>
