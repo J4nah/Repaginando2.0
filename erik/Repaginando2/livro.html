@@ -76,8 +76,8 @@
                 </div>
                 <p class="contact-phrase">Entrar em contato</p>
                 <div class="contact-icon">
-                    <a href="#"><img src="imagens/redes/btn-whatsapp.png" alt="Ícone Whatsapp"></a>
-                    <a href="#"><img src="imagens/redes/btn-email.png" alt="Ícone Whatsapp"></a>
+                    <a onclick={avisarNaoEstaLogado()}><img src="imagens/redes/btn-whatsapp.png" alt="Ícone Whatsapp"></a>
+                    <a onclick={avisarNaoEstaLogado()}><img src="imagens/redes/btn-email.png" alt="Ícone Whatsapp"></a>
                 </div>
             </div>
         </section>
@@ -131,6 +131,7 @@
         <p class="copyright">Copyright © 2024 Repaginando. Todos os direitos reservados.</p>
     </footer>
     <script src="js/pesquisa-dividida.js"></script>
+    <script src="../../Scripts/whatsappEmailFromHome.js"></script>
 </body>
 
 </html>

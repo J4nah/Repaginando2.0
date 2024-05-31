@@ -60,9 +60,9 @@ document.getElementById('book-search-form').addEventListener('submit', function 
     let url = '';
 
     if (livroSearch.checked) {
-        url = `pesquisados-capa-logado.html?searchTerm=${encodeURIComponent(searchTerm.value)}&searchType=title`;
+        url = `pesquisados-capa.html?searchTerm=${encodeURIComponent(searchTerm.value)}&searchType=title`;
     } else if (authorSearch.checked) {
-        url = `pesquisados-capa-logado.html?searchTerm=${encodeURIComponent(searchTerm.value)}&searchType=author`;
+        url = `pesquisados-capa.html?searchTerm=${encodeURIComponent(searchTerm.value)}&searchType=author`;
     }
 
     window.location.href = url;
