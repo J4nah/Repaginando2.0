@@ -3,7 +3,7 @@ function confirmaSenha(){
 
     const senhaConfirm = document.getElementById('confirmarSenha').value;
     if(senha === "" || senhaConfirm === ""){
-        console.log('Algum campo de senha está em branco');
+        window.alert('Algum campo de senha está em branco');
         return null
     }
 

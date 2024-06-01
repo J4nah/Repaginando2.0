@@ -15,3 +15,79 @@
     align-items: center;
     gap: 20px;
 }
+
+section.slider {
+    margin: 0 auto;
+    width: 400%;
+    height: auto;
+    padding: 0 !important;
+    overflow: hidden; /* esconde a barra de rolagem */
+  }
+  
+  .slider-content input {
+    display: none; /* para esconder os radios.. eles só vão servir para o js */
+  }
+  
+  .slider-content {
+    width: 100%;
+    height: auto;
+    display: flex;
+  }
+  
+  .slide-box {
+    width: 25%;
+    height: auto;
+    position: relative;
+    transition: 1.5s;
+  }
+  
+  .slide-box img {
+    width: 100%;
+  }
+  
+  .nav-manual, .nav-auto{
+    position: absolute;
+    width: 100%;
+    margin-top: 32%; /* se as bolinhas estiverem em cima da imagem ou distante dela, mexer aqui */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-manual .manual-btn, .nav-auto div {
+    border: 1px solid rgb(20, 37, 60);
+    padding: 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child) {
+    margin-right: 10px;
+  }
+  
+  .nav-manual .manual-btn:hover {
+    background-color: rgb(20, 37, 60);
+  }
+  
+  #radio1:checked ~ .nav-auto .auto-btn1 {
+    background-color: rgb(20, 37, 60);
+  }
+  
+  #radio2:checked ~ .nav-auto .auto-btn2 {
+    background-color: rgb(20, 37, 60);
+  }
+  #radio3:checked ~ .nav-auto .auto-btn3 {
+    background-color: rgb(20, 37, 60);
+  }
+  
+  #radio1:checked ~ .primeiro {
+    margin-left: 0%;
+  }
+  
+  #radio2:checked ~ .primeiro {
+    margin-left: -25%;
+  }
+  
+  #radio3:checked ~ .primeiro {
+    margin-left: -50%;
+  }

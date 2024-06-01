@@ -34,9 +34,9 @@ fetch(url2)
                     <p>
                         Nome do livro: <span class="about-book">${volumeInfo.title}</span> <br>
                         Autor: <span class="about-book">${volumeInfo.authors ? volumeInfo.authors.join(', ') : 'Desconhecido'}</span> <br>
-                        Editora: <span class="about-book">Autêntica</span> <br>
+                        Editora: <span class="about-book">${volumeInfo.publisher || 'Desconhecido'}</span> <br>
                         Gênero: <span class="about-book">${volumeInfo.categories ? volumeInfo.categories.join(', ') : 'Desconhecido'}</span> <br>
-                        Ano de publicação: <span class="about-book">2017</span> <br>
+                        Ano de publicação: <span class="about-book">${volumeInfo.publishedDate ? volumeInfo.publishedDate.split('-')[0] : 'Desconhecido'}</span> <br>
                         Quantidade de páginas: <span class="about-book">${volumeInfo.pageCount ? volumeInfo.pageCount : 'Desconhecido'}</span> <br>
                     </p>
                 </div>
