@@ -21,22 +21,22 @@ async function CadastrarUsuario() {
     }
 
     if(email === ""){
-        console.log('Preencha o campo email');
+        window.alert('Preencha o campo email');
         return null;
     }
 
     if(!validarEmail(email)){
-        console.warn('Formato de email incompatível. Tente novamente.');
+        window.alert('Formato de email incompatível. Tente novamente.');
         return null;
     }
 
     if(nomeCompleto === ""){
-        console.log('Preencha o campo Nome completo');
+        window.alert('Preencha o campo Nome completo');
         return null;
     }
 
     if(!confirmaSenha()){
-        console.log('Confirme sua senha novamente.');
+        window.alert('Confirme sua senha novamente.');
         return null;
     }
 
