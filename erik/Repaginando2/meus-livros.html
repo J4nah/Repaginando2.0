@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaginando</title>
+    <link rel="shortcut icon" href="Imagens/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="home-logado.html"><img src="imagens/Logo.svg" alt="Logo repaginando"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a class="menu-decor" href="home-logado.html">Home</a></li>
+                    <li><a class="menu-decor" href="perfil.html">Perfil</a></li>
+                    <li><a class="menu-decor" href="#">Meus Livros</a></li>
+                </ul>
+            </div>
+            <div class="search-group">
+                <form id="book-search-form" method="GET">
+                    <input id="search-input" class="search-field" type="text" name="searchTerm"
+                        placeholder="Pesquise por autor ou livro...">
+                    <button type="submit" class="btn-icon"><img src="imagens/Lupa.svg" alt="Lupa"></button>
+                    <div class="radio">
+                        <div class="authorSearch">
+                            <input type="radio" name="searchType" value="author" id="authorSearch">
+                            <label for="authorSearch">Pesquisar por autor</label>
+                        </div>
+                        <div class="bookSearch">
+                            <input type="radio" name="searchType" value="title" id="bookSearch">
+                            <label for="bookSearch">Pesquisar por livro</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="home-flex-main">
+                <div class="home-flex">
+                    <img class="img-home" id="header-profile-photo" src="imagens/pessoas/UsuarioPadraoPic.jpg" alt="">
+                    <p id="mensagemOla"></p>
+                </div>
+                <a class="btn-line" onclick={Sair()}>Sair</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="perfil-publico">
+            <div>
+                <form class="flex-form" action="#">
+
+                    <div>
+                        <h1 class="h1-profile">Cadastrar livros</h1><br>
+                        <label class="atual h2-profile" style="font-size: 24px; margin-right: 160px;">Nome do
+                            livro</label>
+                        <input style="width: 600px;" class="style-box-profile-contact" type="email" id="email"
+                            name="email" placeholder="" style="color: white;"><br><br>
+
+                        <label class="atual h2-profile" style="font-size: 24px; margin-right: 260px;">Autor</label>
+                        <input class="style-box-profile-contact" type="email" id="email" name="email" placeholder=""
+                            style="width: 600px;"><br><br>
+
+                        <label class="atual h2-profile" style="font-size: 24px; margin-right: 240px;">Editora</label>
+                        <input class="style-box-profile-contact" type="email" id="email" name="email" placeholder=""
+                            style="width: 600px;"><br><br>
+
+                        <label class="atual h2-profile" style="font-size: 24px; margin-right: 235px;">Gênero</label>
+                        <select name="genero" id="" class="box-state style-box-profile">
+                            <option disabled value="Selecione">Selecione</option>
+                            <option value="ficcao_cientifica">Ficção Científica</option>
+                            <option value="Semi-Novo">Fantasia</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Mistério">Mistério</option>
+                            <option value="Suspense">Suspense</option>
+                            <option value="Terror/Horror">Terror/Horror</option>
+                            <option value="Policial">Policial</option>
+                            <option value="Aventura">Aventura</option>
+                            <option value="História">História</option>
+                            <option value="Biografia">Biografia</option>
+                            <option value="Autobiografia">Autobiografia</option>
+                            <option value="Fatos Reais">Fatos Reais</option>
+                            <option value="Poesia">Poesia</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Comédia">Comédia</option>
+                            <option value="Crônica">Crônica</option>
+                            <option value="Ficção Histórica">Ficção Histórica</option>
+                            <option value="Ficção Realista">Ficção Realista</option>
+                            <option value="Ficção Distópica">Ficção Distópica</option>
+                            <option value="Literatura Infantil">Literatura Infantil</option>
+                            <option value="Ensaios">Ensaios</option>
+                            <option value="Filosofia">Filosofia</option>
+                            <option value="Autoajuda">Autoajuda</option>
+                            <option value="Viagem">Viagem</option>
+                            <option value="Religião">Religião</option>
+                        </select><br><br>
+
+                        <label class="atual h2-profile" style="font-size: 24px; margin-right: 90px;">Ano de
+                            publicação</label>
+                        <input class="style-box-profile-contact" type="number" id="email" name="email" placeholder=""
+                            style="width: 132px;"><br><br>
+
+                        <label class="atual h2-profile" style="font-size: 24px; margin-right: 25px;">Quantidade de
+                            páginas</label>
+                        <input class="style-box-profile-contact" type="number" id="email" name="email" placeholder=""
+                            style="width: 132px;"><br><br>
+
+                        <label class="atual h2-profile" style="font-size: 24px; margin-right: 133px;">Estado do
+                            livro</label>
+                        <select name="genero" id="" class="box-state style-box-profile">
+                            <option disabled value="Selecione">Selecione</option>
+                            <option value="Novo">Novo</option>
+                            <option value="Semi-Novo">Semi-Novo</option>
+                            <option value="Danificado">Danificado</option>
+                        </select><br><br><br>
+
+
+                        <label class="atual h2-profile"
+                            style="font-size: 24px; margin-right: 133px;">Fotos</label><br><br>
+                        <section style="display: flex; flex-direction: row; gap: 20px;">
+
+                            <div
+                                style="display: flex; justify-content: center; align-items: center; border-radius: 15px; flex-direction: column; border: 3px solid var(--firstColor); height: 137px; width: 145px;">
+                                <input type="file" id="file" style="display: none;" />
+                                <label for="file"
+                                    style="display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer;">
+                                    <img src="./imagens/Layer_1.png" style="margin-bottom: 15px;">
+                                    <p style="font-weight: 500;">Adicionar fotos</p>
+                                </label>
+                            </div>
+                            <div
+                                style="display: flex; justify-content: center; align-items: center; border-radius: 15px; flex-direction: column; border: 3px solid var(--firstColor); height: 137px; width: 145px;">
+                                <input type="file" id="file" style="display: none;" />
+                                <label for="file"
+                                    style="display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer;">
+                                    <img src="./imagens/Layer_1.png" style="margin-bottom: 15px;">
+                                    <p style="font-weight: 500;">Adicionar fotos</p>
+                                </label>
+                            </div>
+                            <div
+                                style="display: flex; justify-content: center; align-items: center; border-radius: 15px; flex-direction: column; border: 3px solid var(--firstColor); height: 137px; width: 145px;">
+                                <input type="file" id="file" style="display: none;" />
+                                <label for="file"
+                                    style="display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer;">
+                                    <img src="./imagens/Layer_1.png" style="margin-bottom: 15px;">
+                                    <p style="font-weight: 500;">Adicionar fotos</p>
+                                </label>
+                            </div>
+                            <div
+                                style="display: flex; justify-content: center; align-items: center; border-radius: 15px; flex-direction: column; border: 3px solid var(--firstColor); height: 137px; width: 145px;">
+                                <input type="file" id="file" style="display: none;" />
+                                <label for="file"
+                                    style="display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer;">
+                                    <img src="./imagens/Layer_1.png" style="margin-bottom: 15px;">
+                                    <p style="font-weight: 500;">Adicionar fotos</p>
+                                </label>
+                            </div>
+                            <div
+                                style="display: flex; justify-content: center; align-items: center; border-radius: 15px; flex-direction: column; border: 3px solid var(--firstColor); height: 137px; width: 145px;">
+                                <input type="file" id="file" style="display: none;" />
+                                <label for="file"
+                                    style="display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer;">
+                                    <img src="./imagens/Layer_1.png" style="margin-bottom: 15px;">
+                                    <p style="font-weight: 500;">Adicionar fotos</p>
+                                </label>
+                            </div>
+
+                            <a style="display: flex; justify-content: center; align-items: center; font-size: 30px; margin-left: 500px; margin-top: 90px; height: 40px;"
+                                class="btn-line" onclick={}>Cadastrar</a>
+                        </section>
+                    </div>
+                </form>
+                <br><br><br>
+                <div>
+                    <h1 class="h1-profile">Meus Livros</h1><br>
+                    <div
+                        style="width: 200px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                        <div style="position: relative;">
+                            <img src="./imagens/livros/01 - Alice no país das maravilhas.jpg"
+                                alt="Alice no País das Maravilhas"
+                                style="width: 100%; height: auto; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                            <span
+                                style="position: absolute; top: 10px; left: 10px; background-color: #70c3c3; color: #fff; padding: 5px; border-radius: 3px;">NOVO</span>
+                        </div>
+                        <div style="padding: 10px;">
+                            <p style="margin: 0; font-size: 16px;">Alice no país das maravilhas - Lew...</p>
+                            <p style="margin: 0; color: #777;">★ ★ ★ ★ ☆</p>
+                            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                                <button onclick="console.log('Editar')"
+                                    style="background-color: #4CAF50; color: #fff; border: none; padding: 5px 10px; cursor: pointer; border-radius: 5px;">Editar</button>
+                                <button onclick="console.log('Excluir')"
+                                    style="background-color: #f44336; color: #fff; border: none; padding: 5px 10px; cursor: pointer; border-radius: 5px;">Excluir</button>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <h1 class="h1-profile">Favoritos</h1><br>
+                    <div style="width: 200px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                        <div style="position: relative;">
+                            <img src="imagens/livros/02 - Isso é marketing.jpg" alt="Isso é marketing"
+                                style="width: 100%; height: auto; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                            <span
+                                style="position: absolute; top: 10px; left: 10px; background-color: #fbbf46; color: #fff; padding: 5px; border-radius: 3px;">SEMI-NOVO</span>
+                            <i id="heart" onclick="toggleHeart()" class="fa fa-heart"
+                                style="border: 2px solid white; border-radius: 15px; background-color: white; padding: 4px; position: absolute; z-index: 2; top: 10px; right: 10px; color: red; cursor: pointer;"></i>
+                            <a href="livro.html"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></a>
+                        </div>
+                        <div style="padding: 10px;">
+                            <p style="margin: 0; font-size: 16px;">Isso é marketing - Seth Godin</p>
+                            <p style="margin: 0; color: #777;">★ ★ ★ ☆ ☆</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-flex">
+            <div class="container-footer">
+                <h3>Sobre Nós</h3>
+                <ul>
+                    <li><a href="#">Quem somos</a></li>
+                    <li><a href="#">Trabalhe conosco</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Imprensa</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Políticas e Termos</h3>
+                <ul>
+                    <li><a href="#">Política e Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Suporte</h3>
+                <ul>
+                    <li><a href="#">Central de ajuda</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Fórum da comunidade</a></li>
+                </ul>
+            </div>
+            <div class="container-footer">
+                <h3>Sobre Nós</h3>
+                <ul>
+                    <li><a href="#">Siga nos:</a></li>
+                </ul>
+                <div class="social-media">
+                    <ul>
+                        <li><a href="https://www.facebook.com/" target="_blank"><img src="imagens/redes/Facebook.svg"
+                                    alt="Facebook"></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><img src="imagens/redes/Instagram.svg"
+                                    alt="Instagram"></a></li>
+                        <li><a href="https://www.linkedin.com/" target="_blank"><img src="imagens/redes/Linkedin.svg"
+                                    alt="Linkedin"></a></li>
+                        <li><a href="https://www.tiktok.com/" target="_blank"><img src="imagens/redes/Tiktok.svg"
+                                    alt="Tiktok"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="divider-line"></div>
+        <p class="copyright">Copyright © 2024 Repaginando. Todos os direitos reservados.</p>
+    </footer>
+    <script src="../../Scripts/updateHeader.js"></script>
+    <script src="../../Scripts/heartColor.js"></script>
+</body>
+
+</html>

@@ -179,3 +179,8 @@ body {
 .atualizarDados:hover {
     background-color: var(--secondColor);
 }
+
+/* BIGEUS */
+.cadastrarLivros {
+    margin-top: 200px;
+}
