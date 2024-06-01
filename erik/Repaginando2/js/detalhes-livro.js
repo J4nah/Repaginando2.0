@@ -16,6 +16,7 @@ fetch(url2)
         <section class="book-detail">
             <div class="book-inside">
                 <p class="big-tag-green">Novo</p>
+                
                 <button type="button" class="btn-icon-like"><img src="imagens/coracao.svg" alt="Lupa"></button>
                 <img class="biggerbook" src="${volumeInfo.imageLinks ? volumeInfo.imageLinks.thumbnail : ''}" alt="">
             </div>
