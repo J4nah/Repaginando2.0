@@ -46,7 +46,39 @@
         </nav>
     </header>
     <main>
-        <img class="banner" src="imagens/banner-site.jpg" alt="banner-site">
+        <section class="slider">
+            <div class="slider-content">
+        
+              <input type="radio" name="btn-radio" id="radio1">
+              <input type="radio" name="btn-radio" id="radio2">
+              <input type="radio" name="btn-radio" id="radio3">
+        
+              <div class="slide-box primeiro">
+                <img src="imagens/Banner_menor.png" alt="slide 1">
+              </div>
+        
+              <div class="slide-box segundo">
+                <img src="imagens/Banner_menor02.png" alt="slide 2">
+              </div>
+        
+              <div class="slide-box segundo">
+                <img src="imagens/Banner_menor03.png" alt="slide 3">
+              </div>
+        
+              <div class="nav-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+              </div>
+        
+              <div class="nav-manual">
+                <label for="radio1" class="manual-btn"></label>
+               <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+             </div>
+            </div>
+          </section>
+        
         <div class="container">
             <h2>Livros em destaque</h2>
             <div class="books">
@@ -212,6 +244,7 @@
         <div class="divider-line"></div>
         <p class="copyright">Copyright © 2024 Repaginando. Todos os direitos reservados.</p>
     </footer>
+    <script src="js/Slide.js"></script>
     <script src="js/pesquisa-dividida.js"></script>
 </body>
 
