@@ -5,6 +5,7 @@
 .btn-size-register {
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .btn-register {
