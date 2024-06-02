@@ -124,6 +124,30 @@ app.post('/generos_usuario', async (req, res) => {
   }
 });
 
+// atualizar generos interesse
+app.put('/atualizar_generos/:id', async (req, res) => {
+  const userId = req.params.id;
+  const generos = req.body.generos;
+
+  // Primeiro, remover todos os gêneros de interesse antigos do usuário
+  await pool.query(`DELETE FROM genero_usuario WHERE Usuario_id = ?`, [userId]);
+
+  // Em seguida, adicionar os novos gêneros de interesse
+  for (const generoNome of generos) {
+    // Buscar o id do gênero pelo nome
+    const [rows] = await pool.query(`SELECT Genero_id FROM genero WHERE Genero_nome = ?`, [generoNome]);
+    if (rows.length > 0) {
+      const generoId = rows[0].Genero_id;
+      await pool.query(`INSERT INTO genero_usuario (Genero_id, Usuario_id) VALUES (?, ?)`, [generoId, userId]);
+    } else {
+      console.error(`Gênero não encontrado: ${generoNome}`);
+    }
+  }
+
+  res.send({ message: 'Gêneros de interesse atualizados com sucesso' });
+});
+
+
 // Atualizar dados do usuário
 app.put('/atualizar_usuario/:id', async (req, res) => {
   const userId = req.params.id;

@@ -1,7 +1,19 @@
-document.getElementById('btnAtualizarDados').addEventListener('click', AtualizarDados);
+// Função para coletar os gêneros marcados
+function getGenerosMarcados() {
+    const checkboxes = document.querySelectorAll('input[name="genero"]');
+    const generosMarcados = [];
 
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            generosMarcados.push(checkbox.value);
+        }
+    });
+
+    return generosMarcados;
+}
+
+// Função para atualizar os dados do usuário
 async function AtualizarDados(event) {
-    // Prevenir o comportamento padrão do botão
     event.preventDefault();
 
     // Obter os valores dos inputs
@@ -42,18 +54,8 @@ async function AtualizarDados(event) {
 
         if (response.ok) {
             // Limpar armazenamento anterior
-            /* localStorage.clear();
-            sessionStorage.clear(); */
-
-            localStorage.removeItem('nome')
-            localStorage.removeItem('email')
-            localStorage.removeItem('senha')
-            localStorage.removeItem('id')
-
-            sessionStorage.removeItem('nome')
-            sessionStorage.removeItem('email')
-            sessionStorage.removeItem('senha')
-            sessionStorage.removeItem('id')
+            localStorage.clear();
+            sessionStorage.clear();
 
             // Selecionar armazenamento adequado
             const storage = isUsingLocalStorage() ? localStorage : sessionStorage;
@@ -68,8 +70,28 @@ async function AtualizarDados(event) {
             storage.setItem('nome', nomeUsuario);
 
             console.log('Dados do usuário atualizados com sucesso:', data);
-            alert('Informações atualizadas com sucesso');
-            window.location.href = 'perfil.html';
+
+            // Obter os gêneros marcados
+            const generosMarcados = getGenerosMarcados();
+
+            // Atualizar os gêneros de interesse do usuário
+            const generoResponse = await fetch(`${urlServer}atualizar_generos/${userId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ generos: generosMarcados })
+            });
+
+            const generoData = await generoResponse.json();
+
+            if (generoResponse.ok) {
+                alert('Informações atualizadas com sucesso');
+                window.location.href = 'perfil.html';
+            } else {
+                console.error('Erro na resposta do servidor (gêneros):', generoData);
+                alert('Erro ao atualizar gêneros do usuário');
+            }
         } else {
             console.error('Erro na resposta do servidor:', data);
             alert('Erro ao atualizar dados do usuário');
@@ -79,3 +101,6 @@ async function AtualizarDados(event) {
         alert('Erro ao atualizar dados do usuário');
     }
 }
+
+// Adicionar o event listener para o botão 'btnAtualizarDados'
+document.getElementById('btnAtualizarDados').addEventListener('click', AtualizarDados);

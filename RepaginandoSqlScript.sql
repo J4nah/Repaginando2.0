@@ -16,14 +16,15 @@ PRIMARY KEY (frase_id)
 
 drop table if exists usuario;
 create table usuario (
-  Usuario_id    INT          AUTO_INCREMENT,     
-  Nome_usuario  VARCHAR(60)  NOT NULL,
-  Celular       VARCHAR(20)  UNIQUE,
-  Email         VARCHAR(60)  UNIQUE NOT NULL,
-  Cidade        VARCHAR(15)  ,
-  Uf			VARCHAR(25)	 ,
-  Senha         varchar(20)  NOT NULL,
-  Usuario_bio 	VARCHAR(200), 
+  Usuario_id    	INT          AUTO_INCREMENT,     
+  Nome_usuario  	VARCHAR(60)  UNIQUE	 NOT NULL,
+  Celular       	VARCHAR(20)  UNIQUE,
+  Email         	VARCHAR(60)  UNIQUE NOT NULL,
+  Cidade        	VARCHAR(15)  ,
+  Uf				VARCHAR(25)	 ,
+  Senha         	varchar(20)  NOT NULL,
+  Usuario_bio 		VARCHAR(200), 
+  Usuario_pic_id	VARCHAR(15)	UNIQUE,
   PRIMARY KEY (Usuario_id)
   );
 
@@ -78,7 +79,7 @@ insert into genero(Genero_nome) values
 ('Ficção Histórica'),
 ('Ficção Realista'),
 ('Ficção Distópica'),
-('Leitura Infantil'),
+('Literatura Infantil'),
 ('Ensaios'),
 ('Filosofia'),
 ('Autoajuda'),
@@ -174,9 +175,11 @@ insert into frases values
 (null,"Nada é mais necessário do que a aparência de religiosidade. De modo geral, os homens julgam mais com os olhos do que com o tato: todos podem ver, mas poucos são capazes de sentir.","Maquiavel"),
 (null,"Quantas oportunidades temos de melhorar, dramaticamente, as vidas das pessoas apenas fazendo nosso trabalho um pouco melhor?","Steve Krug");
 
--- DELETE FROM usuario WHERE Usuario_id = 15;
+-- DELETE FROM usuario WHERE Usuario_id = 10;
 
  select * from usuario;
+ 
+-- select * from genero_usuario where Usuario_id = 2;
 
 -- select * from frases;
 
