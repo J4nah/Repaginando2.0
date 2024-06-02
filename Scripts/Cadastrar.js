@@ -62,7 +62,7 @@ async function CadastrarUsuario() {
             sessionStorage.setItem('email', data.email);
             sessionStorage.setItem('nome', data.nome);
 
-            window.alert("deu certo!")
+            window.alert("Usuário cadastrado com sucesso!")
 
             window.location.href = 'home-logado.html';
         }
