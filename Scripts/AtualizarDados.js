@@ -1,6 +1,6 @@
 document.getElementById('btnAtualizarDados').addEventListener('click', AtualizarDados);
 
-async function AtualizarDados() {
+async function AtualizarDados(event) {
     // Prevenir o comportamento padrão do botão
     event.preventDefault();
 
@@ -40,35 +40,42 @@ async function AtualizarDados() {
         });
         const data = await response.json();
 
-        if (!isUsingLocalStorage) {
-            localStorage.clear();
-            localStorage.setItem('id', idUsuarioUtil);
-            localStorage.setItem('estado', estado);
-            localStorage.setItem('celular', celular);
-            localStorage.setItem('cidade', cidade);
-            localStorage.setItem('bio', bio);
-            localStorage.setItem('email', email);
-            localStorage.setItem('nome', nomeUsuario);
-        } else {
-            sessionStorage.clear();
-            sessionStorage.setItem('id', idUsuarioUtil);
-            sessionStorage.setItem('estado', estado);
-            sessionStorage.setItem('celular', celular);
-            sessionStorage.setItem('cidade', cidade);
-            sessionStorage.setItem('bio', bio);
-            sessionStorage.setItem('email', email);
-            sessionStorage.setItem('nome', nomeUsuario);
-        }
+        if (response.ok) {
+            // Limpar armazenamento anterior
+            /* localStorage.clear();
+            sessionStorage.clear(); */
 
-        console.log('Dados do usuário atualizados com sucesso:', data);
-        alert('Informações atualizadas com sucesso');
-        window.location.href = 'perfil.html'
+            localStorage.removeItem('nome')
+            localStorage.removeItem('email')
+            localStorage.removeItem('senha')
+            localStorage.removeItem('id')
+
+            sessionStorage.removeItem('nome')
+            sessionStorage.removeItem('email')
+            sessionStorage.removeItem('senha')
+            sessionStorage.removeItem('id')
+
+            // Selecionar armazenamento adequado
+            const storage = isUsingLocalStorage() ? localStorage : sessionStorage;
+
+            // Atualizar armazenamento com novos dados
+            storage.setItem('id', userId);
+            storage.setItem('estado', estado);
+            storage.setItem('celular', celular);
+            storage.setItem('cidade', cidade);
+            storage.setItem('bio', bio);
+            storage.setItem('email', email);
+            storage.setItem('nome', nomeUsuario);
+
+            console.log('Dados do usuário atualizados com sucesso:', data);
+            alert('Informações atualizadas com sucesso');
+            window.location.href = 'perfil.html';
+        } else {
+            console.error('Erro na resposta do servidor:', data);
+            alert('Erro ao atualizar dados do usuário');
+        }
     } catch (error) {
         console.error('Erro ao atualizar dados do usuário:', error);
         alert('Erro ao atualizar dados do usuário');
     }
-}
-
-function getManterConectado() {
-
 }

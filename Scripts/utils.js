@@ -5,12 +5,7 @@ let currentUrl = window.location.href;
 let idUsuarioUtil = 0;
 
 function isUsingLocalStorage() {
-    const tool = localStorage.getItem('nome')
-    if (!tool) {
-        return false;
-    } else {
-        return true;
-    }
+    return localStorage.getItem('manterConectado') === 'true';
 }
 
 function isLivroAutorSelected() {
