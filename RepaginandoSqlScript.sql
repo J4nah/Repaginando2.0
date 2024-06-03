@@ -24,7 +24,6 @@ create table usuario (
   Uf				VARCHAR(25)	 ,
   Senha         	varchar(20)  NOT NULL,
   Usuario_bio 		VARCHAR(200), 
-  Usuario_pic_id	VARCHAR(15)	UNIQUE,
   PRIMARY KEY (Usuario_id)
   );
 
@@ -89,8 +88,8 @@ insert into genero(Genero_nome) values
 
 insert into estado(Estado_nome) values
 ('Novo'),
-('Usado'),
-('Bem Usado');
+('Semi-Novo'),
+('Danificado');
 
 insert into usuario values
 (null,	'Bigeus',		'15998421996',	'bigeus@gmail.com',		'Tatuí',		'SP',	29082003, 'Funcionando desde 2003 amando livros.'),
@@ -177,7 +176,9 @@ insert into frases values
 
 -- DELETE FROM usuario WHERE Usuario_id = 10;
 
- select * from usuario;
+-- select * from livro;
+
+-- select * from usuario;
  
 -- select * from genero_usuario where Usuario_id = 2;
 

@@ -58,22 +58,22 @@
                         <h1 class="h1-profile">Cadastrar livros</h1><br>
                         <label class="atual h2-profile" style="font-size: 24px; margin-right: 160px;">Nome do
                             livro</label>
-                        <input style="width: 600px;" class="style-box-profile-contact" type="email" id="email"
-                            name="email" placeholder="" style="color: white;"><br><br>
+                        <input style="width: 600px;" class="style-box-profile-contact" type="text" id="nomeLivro"
+                            name="" placeholder="" style="color: white;"><br><br>
 
                         <label class="atual h2-profile" style="font-size: 24px; margin-right: 260px;">Autor</label>
-                        <input class="style-box-profile-contact" type="email" id="email" name="email" placeholder=""
+                        <input class="style-box-profile-contact" type="text" id="autor" name="" placeholder=""
                             style="width: 600px;"><br><br>
 
                         <label class="atual h2-profile" style="font-size: 24px; margin-right: 240px;">Editora</label>
-                        <input class="style-box-profile-contact" type="email" id="email" name="email" placeholder=""
+                        <input class="style-box-profile-contact" type="text" id="editora" name="" placeholder=""
                             style="width: 600px;"><br><br>
 
                         <label class="atual h2-profile" style="font-size: 24px; margin-right: 235px;">Gênero</label>
-                        <select name="genero" id="" class="box-state style-box-profile">
+                        <select name="genero" id="genero" class="box-state style-box-profile">
                             <option disabled value="Selecione">Selecione</option>
-                            <option value="ficcao_cientifica">Ficção Científica</option>
-                            <option value="Semi-Novo">Fantasia</option>
+                            <option value="Ficção Científica">Ficção Científica</option>
+                            <option value="Fantasia">Fantasia</option>
                             <option value="Romance">Romance</option>
                             <option value="Mistério">Mistério</option>
                             <option value="Suspense">Suspense</option>
@@ -101,17 +101,17 @@
 
                         <label class="atual h2-profile" style="font-size: 24px; margin-right: 90px;">Ano de
                             publicação</label>
-                        <input class="style-box-profile-contact" type="number" id="email" name="email" placeholder=""
+                        <input class="style-box-profile-contact" type="number" id="anoPublicacao" name="email" placeholder=""
                             style="width: 132px;"><br><br>
 
                         <label class="atual h2-profile" style="font-size: 24px; margin-right: 25px;">Quantidade de
                             páginas</label>
-                        <input class="style-box-profile-contact" type="number" id="email" name="email" placeholder=""
+                        <input class="style-box-profile-contact" type="number" id="qtdePaginas" name="email" placeholder=""
                             style="width: 132px;"><br><br>
 
                         <label class="atual h2-profile" style="font-size: 24px; margin-right: 133px;">Estado do
                             livro</label>
-                        <select name="genero" id="" class="box-state style-box-profile">
+                        <select name="genero" id="estadoLivro" class="box-state style-box-profile">
                             <option disabled value="Selecione">Selecione</option>
                             <option value="Novo">Novo</option>
                             <option value="Semi-Novo">Semi-Novo</option>
@@ -175,8 +175,8 @@
 
 
 
-                            <a style="display: flex; justify-content: center; align-items: center; font-size: 30px; margin-left: 500px; margin-top: 90px; height: 40px;"
-                                class="btn-line" onclick={}>Cadastrar</a>
+                            <button style="display: flex; justify-content: center; align-items: center; font-size: 30px; margin-left: 500px; margin-top: 90px; height: 40px;"
+                              id="btnCadastrar"  class="btn-line">Cadastrar</button>
                         </section>
                     </div>
                 </form>
@@ -276,9 +276,12 @@
         <div class="divider-line"></div>
         <p class="copyright">Copyright © 2024 Repaginando. Todos os direitos reservados.</p>
     </footer>
+    <script src="../../Scripts/utils.js"></script>
     <script src="../../Scripts/updateHeader.js"></script>
+    <script src="../../Scripts/Sair.js"></script>
     <script src="../../Scripts/heartColor.js"></script>
     <script src="../../Scripts/showImageMeusLivros.js"></script>
+    <script src="../../Scripts/cadastro-livro.js"></script>
     <script src="js/pesquisa-dividida-logado.js"></script>
 </body>
 
