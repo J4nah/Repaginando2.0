@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             buscarEstados(usuario.Uf);
             buscarCidades(usuario.Cidade, usuario.Uf);
 
-            if (usuario.Celular && usuario.Email) {
+            if (usuario.Celular || usuario.Email) {
                 document.getElementById('telefone').value = usuario.Celular;
                 document.getElementById('email').value = usuario.Email;
             }
