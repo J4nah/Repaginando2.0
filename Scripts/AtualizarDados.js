@@ -53,9 +53,19 @@ async function AtualizarDados(event) {
         const data = await response.json();
 
         if (response.ok) {
-            // Limpar armazenamento anterior
+            /* // Limpar armazenamento anterior
             localStorage.clear();
-            sessionStorage.clear();
+            sessionStorage.clear(); */
+            localStorage.removeItem('nome')
+            localStorage.removeItem('email')
+            localStorage.removeItem('senha')
+            localStorage.removeItem('id')
+
+            sessionStorage.removeItem('nome')
+            sessionStorage.removeItem('email')
+            sessionStorage.removeItem('senha')
+            sessionStorage.removeItem('id')
+
 
             // Selecionar armazenamento adequado
             const storage = isUsingLocalStorage() ? localStorage : sessionStorage;

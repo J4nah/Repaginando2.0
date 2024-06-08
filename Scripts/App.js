@@ -147,6 +147,32 @@ app.put('/atualizar_generos/:id', async (req, res) => {
   res.send({ message: 'Gêneros de interesse atualizados com sucesso' });
 });
 
+// Endpoint para cadastrar um novo livro
+app.post('/cadastrar_livro', async (req, res) => {
+  const { nome, anoPubli, qtdePaginas, editora, autor, generoId, estadoId } = req.body;
+
+  if (!nome || !anoPubli || !qtdePaginas || !editora || !autor || !generoId || !estadoId) {
+    return res.status(400).send({ message: 'Erro: Todos os campos são obrigatórios. Verifique se todos os campos foram preenchidos corretamente.' });
+  }
+
+  try {
+    // Inserir o novo livro na tabela
+    const result = await pool.query(
+      `INSERT INTO livro (Nome, Ano_Publi, Qtde_Paginas, Editora, Autor, Genero_id, Estado_id) 
+          VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      [nome, anoPubli, qtdePaginas, editora, autor, generoId, estadoId]
+    );
+
+    // Obter o ID do livro inserido
+    const livroId = result[0].insertId;
+    console.log('Livro cadastrado com sucesso. ID:', livroId);
+    res.status(201).send({ message: 'Livro cadastrado com sucesso', livroId: livroId });
+
+  } catch (error) {
+    console.error('Erro ao cadastrar o livro:', error);
+    res.status(500).send({ message: `Erro interno: Falha ao cadastrar o livro. Detalhes do erro: ${error.message}` });
+  }
+});
 
 // Atualizar dados do usuário
 app.put('/atualizar_usuario/:id', async (req, res) => {
